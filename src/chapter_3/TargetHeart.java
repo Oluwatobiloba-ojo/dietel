@@ -68,7 +68,7 @@ public class TargetHeart {
         if (excercise == 50) {
             double targetHeartRate = maximum * 0.50;
             TargetHeart.targetHeartRate = targetHeartRate;
-        } else if (excercise == 85) {
+        } else if (excercise == 70) {
             double targetHeartRate = maximum * 0.85;
             TargetHeart.targetHeartRate = targetHeartRate;
         }
@@ -76,7 +76,7 @@ public class TargetHeart {
     }
 
     public double displayTargetHeartRateRange2(int excercise) {
-        if (excercise == 50) {
+        if (excercise == 70) {
             int targetHeartRate = (int) (maximum * 0.50);
             TargetHeart.targetHeartRate2 = targetHeartRate;
         } else if (excercise == 85) {
