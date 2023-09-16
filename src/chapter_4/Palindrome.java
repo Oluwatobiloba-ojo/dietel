@@ -12,9 +12,20 @@ public class Palindrome {
             fiveDigit = input.nextInt();
         }
         int firstOne = fiveDigit / 10000;
+        int secondDigit = fiveDigit / 1000 % 10;
+        int thirdDigit = fiveDigit / 100 % 10;
+        int fourDigit = fiveDigit / 10 % 10;
         int lastDigit = fiveDigit % 10;
 
-        if (firstOne == lastDigit) System.out.printf("This number %d is a palindrome", fiveDigit);
+        String firstValue = String.valueOf(firstOne);
+        String secondValue = String.valueOf(secondDigit);
+        String thirdValue = String.valueOf(thirdDigit);
+        String fourValue = String.valueOf(fourDigit);
+        String lastValue = String.valueOf(lastDigit);
+
+        String palindrome = lastValue + fourValue + thirdValue + secondValue + firstValue;
+        int replicate = Integer.parseInt((palindrome));
+        if (fiveDigit == replicate) System.out.printf("This number %d is a palindrome", fiveDigit);
         else {
             System.out.printf("This number %d is not a palindrome", fiveDigit);
         }
