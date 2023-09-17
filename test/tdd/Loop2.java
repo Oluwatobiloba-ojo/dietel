@@ -6,9 +6,9 @@ public class Loop2 {
 
         for(int index = 1; index <= number; index++){
             for (int down = index; down <= number; down++){
-                System.out.print(3);
+                System.out.print("*   ");
             }for(int row = 1; row <= index; row++){
-                System.out.print("*");
+                System.out.print("   *");
             }
             System.out.println();
         }

@@ -4,8 +4,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import tdd.Clock;
 
-import java.util.concurrent.Callable;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 class ClockTest {

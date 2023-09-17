@@ -3,8 +3,6 @@ package Chapter3Test.tdd;
 import org.junit.jupiter.api.Test;
 import tdd.Car;
 
-import java.io.CharArrayReader;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 class CarTest {
