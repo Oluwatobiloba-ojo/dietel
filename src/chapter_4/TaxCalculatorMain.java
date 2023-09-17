@@ -2,7 +2,7 @@ package chapter_4;
 
 import java.util.Scanner;
 
-public class TaxCalculatorMain {
+public class    TaxCalculatorMain {
     public static void main(String[] args) {
         TaxCalculator myTax = new TaxCalculator();
         Scanner input = new Scanner(System.in);
