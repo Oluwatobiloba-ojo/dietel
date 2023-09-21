@@ -1,7 +1,7 @@
 package Chapter3Test.tdd;
 
 import org.junit.jupiter.api.Test;
-import tdd.School;
+import chapterthree.School;
 
 import static org.junit.jupiter.api.Assertions.*;
 
