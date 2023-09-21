@@ -1,4 +1,6 @@
-package chapter_3;
+package chapterthree;
+
+import chapterthree.HeartRate;
 
 import java.time.LocalDate;
 import java.util.Scanner;
@@ -32,7 +34,7 @@ public class HeartRateSample {
 
         System.out.printf("\nYour age from the calculation is %d",age);
 
-        myHeart.maximumHeartRate(age);
+        myHeart.maximumHeartRate();
         System.out.printf("\nMaximum heart rate is %d",myHeart.getMaximumHeartRate());
 
         System.out.print("\nYou will have to write a percentage of your heart rate in which " +

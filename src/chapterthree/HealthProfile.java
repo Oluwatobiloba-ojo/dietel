@@ -1,7 +1,5 @@
-package chapter_3;
-
+package chapterthree;
 public class HealthProfile {
-
     private String firstName;
     private String lastName;
     private String gender;
@@ -10,11 +8,6 @@ public class HealthProfile {
     private int monthOfYear;
     private double height;
     private double weight;
-    private int maximumHeartRate;
-    private double bodyMassIndex;
-    private int age;
-    private double targetHeartRange1;
-    private double targetHeartRange2;
 
     public HealthProfile(String name, String lastName, String gender, int dateOfBirth, int yearOfBirth
             , int monthOfYear, double height, double weight) {
@@ -93,47 +86,39 @@ public class HealthProfile {
         return weight;
     }
 
-    public void maximumHeartRate(int age) {
+    public int calculateAge(){
+        int yearNow = 2023;
+        return yearNow - yearOfBirth;
+    }
+    public int maximumHeartRate() {
         int constant = 220;
-        this.maximumHeartRate = constant - age;
+        return constant - calculateAge();
+    }
+    public double calculateBMI() {
+        double value = weight / (height * height);
+        double result = value * 730;
+        String fakeResult = String.format("%.2f",result);
+        return Double.parseDouble(fakeResult);
     }
 
-    public int getMaximumHeartRate() {
-        return maximumHeartRate;
-    }
-
-    public void setBMI() {
-        double value = weight / height * height;
-        this.bodyMassIndex = value * 730;
-    }
-
-    public double getBMI() {
-        return bodyMassIndex;
-    }
-
-    public void TargetHeartRange(int percentage) {
+    public String TargetHeartRange(int percentage) {
+        double targetHeartRange1 = 0;
         if (percentage == 50) {
-            this.targetHeartRange1 = maximumHeartRate * 0.50;
+            targetHeartRange1 = maximumHeartRate() * 0.50;
         }
         if (percentage == 70) {
-            this.targetHeartRange1 = maximumHeartRate * 0.70;
+            targetHeartRange1 = maximumHeartRate() * 0.70;
         }
+        return String.format("%.2f",targetHeartRange1);
     }
-
-    public double getTargetHeartRange1() {
-        return targetHeartRange1;
-    }
-
-    public void TargetHeartRange2(int percentage2) {
+    public String TargetHeartRange2(int percentage2) {
+        double targetHeartRange2 = 0;
         if (percentage2 == 70) {
-            this.targetHeartRange2 = maximumHeartRate * 0.70;
+            targetHeartRange2 = maximumHeartRate() * 0.70;
         }
         if (percentage2 == 85) {
-            this.targetHeartRange2 = maximumHeartRate * 0.85;
+            targetHeartRange2 = maximumHeartRate() * 0.85;
         }
-    }
-
-    public double getTargetHeartRange2() {
-        return targetHeartRange2;
+        return String.format("%.2f",targetHeartRange2);
     }
 }

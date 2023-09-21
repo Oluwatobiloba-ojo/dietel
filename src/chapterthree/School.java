@@ -1,4 +1,4 @@
-package tdd;
+package chapterthree;
 
 public class School {
 private String name;

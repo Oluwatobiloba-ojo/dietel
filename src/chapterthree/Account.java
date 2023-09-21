@@ -1,10 +1,21 @@
-package chapter_3;
+package chapterthree;
 
 public class Account {
     
-    private int balance;
+    private double balance;
+    private String name;
 
-    public int deposit(int amount){
+    public Account(String name, double balance){
+        this.name = name;
+        this.balance = balance;
+    }
+    public void setName(String name){
+        this.name = name;
+    }
+    public String getName(){
+        return name;
+    }
+    public double deposit(int amount){
         this.balance = balance + amount;
         return balance;
     }
@@ -15,7 +26,7 @@ public class Account {
             System.out.println("insufficient amount");
         }
     }
-    public int checkBalance() {
+    public double checkBalance() {
         return this.balance;
     }
 }

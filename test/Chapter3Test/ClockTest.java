@@ -1,9 +1,9 @@
-package chapterthree;
+package Chapter3Test;
 
+import chapterthree.Clock;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import tdd.Clock;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -12,7 +12,7 @@ class ClockTest {
     Clock myClock;
     @BeforeEach
     public void setUp(){
-        myClock = new Clock(12,10,34);
+        myClock = new Clock(00,00,34);
     }
     @Test
     public void testThatClockCanExist(){
@@ -47,7 +47,13 @@ class ClockTest {
     }
     @Test
     public void testThatClockCanDisplayInHourMinuteSecond(){
+    myClock.display();
+    assertEquals("0:0:34",myClock.display());
 
+    myClock.setMinute(65);
+    myClock.setHour(25);
+    myClock.setSecond(40);
+    assertEquals("0:0:40", myClock.display());
     }
 
 }

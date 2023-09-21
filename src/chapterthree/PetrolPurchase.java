@@ -1,4 +1,4 @@
-package chapter_3;
+package chapterthree;
 
 public class PetrolPurchase {
     private String location;
@@ -29,7 +29,7 @@ public class PetrolPurchase {
         pricePerLitre = priceLitre;
     }
     public void setPercentageDiscount(double discount){
-        percentageDiscount = discount;
+        percentageDiscount = discount / 100;
     }
     public String getLocation(){
         return location;
@@ -48,7 +48,7 @@ public class PetrolPurchase {
     }
     public double getPurchaseAmount(){
         double multiply =  quantityPurchaseLitre * pricePerLitre;
-        double netAmount =  multiply - percentageDiscount;
-        return netAmount;
+        percentageDiscount = percentageDiscount * multiply;
+        return multiply - percentageDiscount;
     }
 }

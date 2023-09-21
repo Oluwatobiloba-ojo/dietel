@@ -1,12 +1,12 @@
-package chapter_3;
+package chapterthree;
 
 public class HeartRate {
+
     private String firstName;
     private String lastName;
     private int monthOfBirth;
     private int yearOfBirth;
     private int dayOfBirth;
-    private int maximumHeartRate;
     private double targetMaximumRange1;
     private double targetMaximumRange2;
 
@@ -57,24 +57,28 @@ public class HeartRate {
     public int getDayOfBirth() {
         return dayOfBirth;
     }
+    public  int calculateAge(){
+        int constant = 2023;
+        return constant - yearOfBirth;
+    }
 
-    public void maximumHeartRate(int age) {
+    public double maximumHeartRate() {
         int minute = 220;
         int maximumHeart;
-        maximumHeart = minute - age;
-        this.maximumHeartRate = maximumHeart;
+        maximumHeart = minute - calculateAge();
+        return maximumHeart;
     }
 
     public int getMaximumHeartRate() {
-        return maximumHeartRate;
+        return (int) maximumHeartRate();
     }
 
     public void TargetMaximumRate(int excercise) {
         if (excercise == 50) {
-            this.targetMaximumRange1 = maximumHeartRate * 0.50;
+            this.targetMaximumRange1 = maximumHeartRate() * 0.50;
         }
         if (excercise == 70) {
-            this.targetMaximumRange1 = maximumHeartRate * 0.70;
+            this.targetMaximumRange1 = maximumHeartRate() * 0.70;
         }
     }
     public double getTargetMaximumRange1(){
@@ -83,10 +87,10 @@ public class HeartRate {
 
     public void TargetMaximumRate2(int excercise2) {
         if (excercise2 == 70) {
-            this.targetMaximumRange2 = maximumHeartRate * 0.70;
+            this.targetMaximumRange2 = maximumHeartRate() * 0.70;
         }
         if (excercise2 == 85) {
-            this.targetMaximumRange2 = maximumHeartRate * 0.85;
+            this.targetMaximumRange2 = maximumHeartRate() * 0.85;
         }
     }
     public double getTargetMaximumRange2(){

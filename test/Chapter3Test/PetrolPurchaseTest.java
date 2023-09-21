@@ -1,6 +1,6 @@
 package Chapter3Test;
 
-import chapter_3.PetrolPurchase;
+import chapterthree.PetrolPurchase;
 
 import java.util.Scanner;
 

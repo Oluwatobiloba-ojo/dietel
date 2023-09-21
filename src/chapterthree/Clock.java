@@ -1,4 +1,4 @@
-package tdd;
+package chapterthree;
 
 public class Clock {
     private int second;
@@ -7,7 +7,9 @@ public class Clock {
 
 
     public Clock(int hour, int minute, int second) {
-    this.second = second;
+        this.minute = minute;
+        this.second = second;
+        this.hour = hour;
     }
 
     public void setSecond(int second) {
@@ -19,7 +21,9 @@ public class Clock {
     }
 
     public void setMinute(int minute) {
-        this.minute = minute;
+        if (minute <= 60) {
+            this.minute = minute;
+        }
     }
 
     public int getMinute() {
@@ -27,13 +31,15 @@ public class Clock {
     }
 
     public void setHour(int hour) {
-        this.hour = hour;
+        if (hour <= 24){
+            this.hour = hour;
+        }
     }
 
     public int getHour() {
         return hour;
     }
-    public void display() {
-        System.out.printf("%d:%d:%d",getHour(),getMinute(),getSecond());
+    public String display() {
+        return String.format("%d:%d:%d", getHour(), getMinute(), getSecond());
     }
 }

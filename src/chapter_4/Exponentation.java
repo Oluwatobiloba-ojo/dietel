@@ -12,7 +12,7 @@ public class Exponentation {
         for (int index = 1; index <= number; index++){
             sum = sum * (1.0 / index);
             product += sum;
-            System.out.println(product);
         }
+        System.out.println(product);
     }
 }
