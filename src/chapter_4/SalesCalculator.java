@@ -8,7 +8,6 @@ public class SalesCalculator {
         System.out.println("Enter 1 to continue this program or enter 0 to stop: ");
         int stopper = input.nextInt();
         for (;stopper != 0; ){
-
             System.out.println("Enter your name: ");
             String theNAme = input.next();
 

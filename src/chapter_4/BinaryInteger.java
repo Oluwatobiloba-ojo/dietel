@@ -7,6 +7,13 @@ public class BinaryInteger {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter a binary digit: ");
         int binaryDigit = scanner.nextInt();
+        int decimalConverter = binaryConverter(binaryDigit);
+        System.out.println(decimalConverter);
+    }
+
+
+
+    public static int binaryConverter(int binaryDigit){
         String strDigit = String.valueOf(binaryDigit);
         int length = strDigit.length();
         int total = 1;
@@ -26,6 +33,6 @@ public class BinaryInteger {
             sum *= constant;
         }
         int result = sum / 2;
-        System.out.println("The decimal equivalence of " + binaryDigit +" "+ result);
+        return result;
     }
 }
