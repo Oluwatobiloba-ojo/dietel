@@ -20,7 +20,7 @@ public class Pyramid {
             for (int index = 1; index <= row; index++) {
                 System.out.print("  ");
             }
-            for (int count = row; count <=number; count++) {
+            for (int count = row; count <= number; count++) {
                 System.out.print("* ");
             }
             for (int column = row; column < number; column++) {
