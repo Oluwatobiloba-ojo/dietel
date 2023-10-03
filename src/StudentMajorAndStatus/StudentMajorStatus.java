@@ -1,7 +1,5 @@
 package StudentMajorAndStatus;
 
-import java.util.Scanner;
-
 public class StudentMajorStatus {
     public static String studentMajorMethod(String input) {
         input = input.toUpperCase();

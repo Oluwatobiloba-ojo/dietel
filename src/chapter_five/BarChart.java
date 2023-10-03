@@ -5,22 +5,23 @@ import java.util.Scanner;
 public class BarChart {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
+        int [] arrays = new int[3];
         System.out.println("Enter a number: ");
-        int firstNumber = input.nextInt();
+        arrays[0] = input.nextInt();
         System.out.println("Enter a number: ");
-        int secondNumber = input.nextInt();
+        arrays[1] = input.nextInt();
         System.out.println("Enter a number: ");
-        int thirdNumber = input.nextInt();
+        arrays[2] = input.nextInt();
 
-        for (int index = 1; index <= firstNumber; index++){
+        for (int index = 1; index <= arrays[0]; index++){
             System.out.print(" * ");
         }
         System.out.println();
-        for (int count = 1; count <= secondNumber; count++){
+        for (int count = 1; count <= arrays[1]; count++){
             System.out.print(" * ");
         }
         System.out.println();
-        for (int index = 1; index <= thirdNumber; index++){
+        for (int index = 1; index <= arrays[2]; index++){
             System.out.print(" * ");
         }
     }

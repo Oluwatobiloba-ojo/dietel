@@ -1,7 +1,6 @@
 package tdd;
 
 import org.junit.jupiter.api.Test;
-import tdd.AC;
 
 import static org.junit.jupiter.api.Assertions.*;
 

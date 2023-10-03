@@ -1,7 +1,5 @@
 package chapter_3;
 
-import static java.lang.Math.pow;
-
 public class Power2 {
     public static void main(String[] args) {
         double a = 1;

@@ -1,7 +1,5 @@
 package chapterthree;
 
-import chapterthree.HeartRate;
-
 import java.time.LocalDate;
 import java.util.Scanner;
 
