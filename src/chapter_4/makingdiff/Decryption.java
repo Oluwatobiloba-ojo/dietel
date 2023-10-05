@@ -1,5 +1,7 @@
 package chapter_4.makingdiff;
 import java.util.Scanner;
+
+
 public class Decryption {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
