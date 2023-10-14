@@ -1,3 +1,5 @@
+package chapter_six;
+
 import chapter_six.PerfectNumber;
 import org.junit.jupiter.api.Test;
 
