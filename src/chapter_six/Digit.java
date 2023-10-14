@@ -1,4 +1,4 @@
-package selfassesment;
+package chapter_six;
 
 public class Digit {
     public static int sumDigit(int number) {
