@@ -11,63 +11,77 @@ public class VaryingTypes {
     static Scanner input = new Scanner(System.in);
     public static void main(String[] args) {
         System.out.println("""
-                1 -> Addition
-                2 -> Subtraction
-                3 -> Multiplication
-                4 -> Division
-                5 -> Random
-                """);
+    1 -> Addition
+    2 -> Subtraction
+    3 -> Multiplication
+    4 -> Division
+    5 -> Random
+    """);
         int results = 0;
         int levels = input.nextInt();
-            switch (levels){
-                case 1 -> {
-                    System.out.println("""
-                            1. Difficulty Level1
-                            2. Difficulty Level2
-                            """);
-                    int innerLevel = input.nextInt();
-                    switch (innerLevel){
-                        case 1 -> results = addition();
-                        case 2 -> results = add2();
-                    }
-                }
-                case 2 -> {
-                    int value = subtraction();
-                    results += value;
-                }
-                case 3 -> {
-                    int value = multiplication();
-                    results += value;
-                }
-                case 4 ->{
-                    System.out.println("""
-                            1. Difficulty Level1
-                            2. Difficulty Level2
-                            """);
-                    int innerLevel = input.nextInt();
-                    switch (innerLevel) {
-                      case 1 ->  results = division();
-                      case 2 -> results = divide();
-                    }
-                }
-                case 5 -> {
-                    int random = 1 + myRandom.nextInt(4);
-                    switch (random){
-                      case 1 -> results = multiplication();
-                      case 2 -> results = division();
-                      case 3 -> results = addition();
-                      case 4 -> results = subtraction();
-                    }
-                }
-            }
+          results = calculate(levels, results);
         System.out.println(results * 10);
     }
+
+
+
+
+
+
+
+    public static int calculate(int levels, int results){
+        switch (levels){
+            case 1 -> {
+                System.out.println("""
+                            1. Difficulty Level1
+                            2. Difficulty Level2
+                            """);
+                int innerLevel = input.nextInt();
+                switch (innerLevel){
+                    case 1 -> results = addition();
+                    case 2 -> results = add2();
+                }
+            }
+            case 2 -> {
+                int value = subtraction();
+                results += value;
+            }
+            case 3 -> {
+                int value = multiplication();
+                results += value;
+            }
+            case 4 ->{
+                System.out.println("""
+                            1. Difficulty Level1
+                            2. Difficulty Level2
+                            """);
+                int innerLevel = input.nextInt();
+                switch (innerLevel) {
+                    case 1 ->  results = division();
+                    case 2 -> results = divide();
+                }
+            }
+            case 5 -> {
+                int random = 1 + myRandom.nextInt(4);
+                switch (random){
+                    case 1 -> results = multiplication();
+                    case 2 -> results = division();
+                    case 3 -> results = addition();
+                    case 4 -> results = subtraction();
+                }
+            }
+        }
+        return results;
+    }
+
+
     public static int divide(){
         int count = 0;
         double result;
         double divisor;
         for (int i = 0; i < 10 ; i++) {
-            int firstNumber = 10 + myRandom.nextInt(9);
+            int firstNumber = 10 + myRandom.nextInt(
+                    9);
             int secondNumber = 10 + myRandom.nextInt(9);
             if (firstNumber > secondNumber){
                 divisor = (double) firstNumber /secondNumber;
