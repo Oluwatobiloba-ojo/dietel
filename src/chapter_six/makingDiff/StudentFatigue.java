@@ -4,27 +4,30 @@ import java.security.SecureRandom;
 import java.util.Scanner;
 
 public class StudentFatigue {
+   static Scanner input = new Scanner(System.in);
+   static SecureRandom myRandom = new SecureRandom();
     public static void main(String[] args){
-            Scanner input = new Scanner(System.in);
-            SecureRandom myRandom = new SecureRandom();
             String stopper = "CONTINUE";
             while (stopper.equals("CONTINUE")){
-                int firstNumber = 1 + myRandom.nextInt(10);
-                int secondNumber = 1 + myRandom.nextInt(10);
-                int guess = 1 + myRandom.nextInt(3);
-                System.out.printf("How much is %d times %d\n", firstNumber, secondNumber);
-                int result = input.nextInt();
-                int product = firstNumber * secondNumber;
-                while (result != product){
-                    display(guess);
-                    System.out.printf("How much is %d times %d\n", firstNumber, secondNumber);
-                    result = input.nextInt();
-                }
-                displayGood(guess);
+                computer();
                 System.out.println("Enter stop to end the program and enter continue to move on ");
                 stopper = input.next();
             }
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         private static void displayGood(int guess) {
             switch (guess){
@@ -43,4 +46,25 @@ public class StudentFatigue {
                 case 4 -> System.out.println("No. Keep Trying");
             }
         }
+    public static void computer(){
+        int firstNumber = 1 + myRandom.nextInt(10);
+        int secondNumber = 1 + myRandom.nextInt(10);
+        int guess = 1 + myRandom.nextInt(3);
+        System.out.printf("How much is %d times %d\n", firstNumber, secondNumber);
+        int product = input.nextInt();
+        int result = multiplication(firstNumber, secondNumber);
+        repeatQuestion(result, firstNumber, secondNumber, product);
+        displayGood(guess);
+    }
+    public static void repeatQuestion(int result, int first, int second, int product){
+        while (result != product){
+            int guess = 1 + myRandom.nextInt(3);
+            display(guess);
+            System.out.printf("How much is %d times %d\n", first, second);
+            product = input.nextInt();
+        }
+    }
+    public static int multiplication(int first, int second){
+        return first * second;
+    }
     }
