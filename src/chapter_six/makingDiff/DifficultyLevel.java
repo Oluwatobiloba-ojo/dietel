@@ -11,6 +11,51 @@ public class DifficultyLevel {
         System.out.println("Enter 1 -> Difficulty Level 1\n" +
                           "Enter 2 -> Difficult level 2");
         int level = input.nextInt();
+       result =  result(level, result);
+      double percentage = calculatePercentage(result);
+      response(percentage);
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    public static void response(double percentage){
+        if (percentage < 75){
+            System.out.println("You will need to go back to your former level");
+        }else {
+            System.out.println("You can give the next level a chance! ");
+        }
+    }
+    public static double calculatePercentage(int result){
+        double rate = (double) (result * 10) / 100;
+        return rate * 100;
+    }
+
+
+
+
+
+
+
+
+    public static int result(int level, int result){
         for (int numberOfTimes = 0; numberOfTimes < 10 ; numberOfTimes++) {
             switch (level){
                 case 1 -> {
@@ -24,14 +69,7 @@ public class DifficultyLevel {
                 default -> System.out.println("Invalid Enter the right input. ");
             }
         }
-        double rate = (double) (result * 10) / 100;
-        double percentage = rate * 100;
-        if (percentage < 75){
-            System.out.println("You will need to go back to your former level");
-        }else {
-            System.out.println("You can give the next level a chance! ");
-        }
-
+        return result;
     }
     public static int difficulty1(){
         int random = 1 + myRandom.nextInt(9);

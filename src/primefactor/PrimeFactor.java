@@ -1,24 +1,26 @@
 package primefactor;
 
+import java.util.ArrayList;
+
 public class PrimeFactor {
 
     public static int[] prime(int number) {
-        String num = "";
+        ArrayList<Integer> num = new ArrayList<>();
         int replicate = number;
         for (int count = 2; count < replicate; count++){
             while (number % count == 0){
                 number /= count;
-                num += count;
+                num.add(count);
             }
         }
        return convertToAnArray(num);
     }
 
 
-    private static int[] convertToAnArray(String num) {
-        int [] result = new int[num.length()];
+    public static int[] convertToAnArray(ArrayList<Integer> num) {
+        int [] result = new int[num.size()];
         for (int count = 0; count < result.length; count++){
-            result[count] = Integer.parseInt(String.valueOf(num.charAt(count)));
+            result[count] = num.get(count);
         }
         return result;
     }
