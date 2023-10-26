@@ -50,9 +50,9 @@ public class VariableLengthHighestFactorTest {
 
     @Test
     public void testForHighestCommonFactor6(){
-        int [] number = {3};
+        int [] number = {24, 60};
         int[] result = VariableLengthHighestFactor.highestFactor(number);
-        int[] answer = {2, 3};
+        int[] answer = {2, 2, 3};
         assertArrayEquals(answer, result);
     }
 

@@ -10,8 +10,6 @@ public class TortoiseHareGame {
         int move = myRandom.nextInt(10);
         int tortoiseMove = 0;
         int hareMove = 0;
-        //int movement = 0;
-        //int numberOfTimes = 0;
         for (int row = 0; row < game.length ; row++) {
             for (int column = 0; column < game[row].length ; column++) {
                 int random = myRandom.nextInt(10);

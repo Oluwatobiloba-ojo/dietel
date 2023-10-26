@@ -41,7 +41,7 @@ public class Greatest {
         return convertToArray(result);
     }
 
-    private static int [] convertToArray(ArrayList result) {
+    public static int [] convertToArray(ArrayList result) {
         int [] numbers = new int[result.size()];
         for (int number = 0; number < numbers.length ; number++) {
             numbers[number] = (int) result.get(number);

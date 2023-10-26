@@ -5,8 +5,8 @@ import java.security.SecureRandom;
 public class DiceRolling {
     public static void main(String[] args) {
         int [] cards = new int[60];
-        for (int i = 0; i <cards.length ; i++) {
-            cards[i] = 1 + i;
+        for (int number = 0; number <cards.length ; number++) {
+            cards[number] = 1 + number;
         }
         for (int i = 0; i < cards.length ; i++) {
             System.out.print("\t"+cards[i]);

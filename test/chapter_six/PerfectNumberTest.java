@@ -26,4 +26,11 @@ class PerfectNumberTest {
         assertFalse(result);
     }
 
+    @Test
+    public void testForPerfectNumber2(){
+        int number = 28;
+        boolean result = PerfectNumber.isPerfect(number);
+        assertTrue(result);
+    }
+
 }

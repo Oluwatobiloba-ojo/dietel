@@ -1,15 +1,6 @@
 package chapter_six;
 
 public class Maths {
-    public static void main(String[] args) {
-        int num = (int) (34.56 + 0.5);
-        System.out.println((double)num);
-        double number = Maths.floor(3.567 * 10 + 0.5) / 10;
-        System.out.println(number);
-        double nums = Maths.floor(3.567 * 100 + 0.5) / 100;
-        System.out.println(nums);
-    }
-
     public static double floor(double number) {
         return (int) (number + 0.5);
     }
