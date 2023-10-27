@@ -8,10 +8,16 @@ public class DiceRolling {
         for (int number = 0; number <cards.length ; number++) {
             cards[number] = 1 + number;
         }
-        for (int i = 0; i < cards.length ; i++) {
-            System.out.print("\t"+cards[i]);
-        }
-        System.out.println(" ");
+        displayingCard(cards);
+        displayingResultFromDice(cards);
+    }
+
+
+
+
+
+
+    private static void displayingResultFromDice(int[] cards) {
         for (int i = 0; i < cards.length ; i++) {
             System.out.print(cards[i] + "\t");
             for (int j = 0; j < cards.length ; j++) {
@@ -20,6 +26,14 @@ public class DiceRolling {
             System.out.println();
         }
     }
+
+    private static void displayingCard(int[] cards) {
+        for (int i = 0; i < cards.length ; i++) {
+            System.out.print("\t"+ cards[i]);
+        }
+        System.out.println(" ");
+    }
+
     public static void dice(){
         SecureRandom myRandom = new SecureRandom();
         SecureRandom myRandoms = new SecureRandom();

@@ -18,6 +18,8 @@ public class Polling {
 
 
 
+
+
     private static void display(int[][] num) {
         int[][] survey = new int[5][10];
         int [] total = new int[5];
