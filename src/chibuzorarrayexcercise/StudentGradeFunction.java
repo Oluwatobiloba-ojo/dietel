@@ -15,7 +15,7 @@ import java.util.Scanner;
          System.out.println("How many student do you have?");
          return input.nextInt();
      }
-     public static void display(int[][] grades,int numberOfSubject){
+     public static void display(int[][] grades,int numberOfSubject) {
          collectTheScoresOfStudent(grades);
          displayScoreGrade(grades, calculateSum(grades), calculateAverage(calculateSum(grades), numberOfSubject),
                             calculatePosition(calculateSum(grades)) );
@@ -23,7 +23,7 @@ import java.util.Scanner;
          displayFirstSummary(grades);
          displaySummary(calculateSum(grades));
      }
-     public static void collectTheScoresOfStudent(int[][] grades) {
+     public static void collectTheScoresOfStudent(int[][] grades)  {
          Scanner input = new Scanner(System.in);
          for (int student = 0; student < grades.length ; student++) {
              System.out.println();
@@ -42,9 +42,10 @@ import java.util.Scanner;
                  }
              }
              System.out.println("Saved successfully");
+         skipPage();
          }
      }
-     public static void displaySaving(int count){
+     public static void displaySaving(int count)  {
          System.out.print("Saving");
          for (int counter = 0; counter < count; counter++){
              System.out.print(">>>");
@@ -325,5 +326,24 @@ import java.util.Scanner;
              System.out.print(character);
          }
         System.out.println();
+    }
+    public static void skipPage(){
+        System.out.println("""
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                """);
     }
 }
