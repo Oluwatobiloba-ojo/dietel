@@ -17,6 +17,11 @@ public class DiceRolling {
 
 
 
+
+
+
+
+
     private static void displayingResultFromDice(int[] cards) {
         for (int i = 0; i < cards.length ; i++) {
             System.out.print(cards[i] + "\t");
