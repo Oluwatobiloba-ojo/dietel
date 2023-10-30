@@ -26,20 +26,20 @@ public class Nokiasample {
                 13 -> Sim services
                 """);
         System.out.println("Enter a request: ");
-        int request = input.nextInt();
+        String request = input.nextLine();
         switch (request) {
-            case 1 -> phoneBook();
-            case 2 -> message();
-            case 3 -> chat();
-            case 4 -> callRegister();
-            case 5 -> Ringtone();
-            case 6 -> Setting();
-            case 7 -> callDivert();
-            case 8 -> Games();
-            case 9 -> Calculator();
-            case 10 -> Remainder();
-            case 11 -> Clock();
-            case 12 -> Profiles();
+            case "1" -> phoneBook();
+            case "2" -> message();
+            case "3" -> chat();
+            case "4" -> callRegister();
+            case "5" -> Ringtone();
+            case "6" -> Setting();
+            case "7" -> callDivert();
+            case "8" -> Games();
+            case "9" -> Calculator();
+            case "10" -> Remainder();
+            case "11" -> Clock();
+            case "12" -> Profiles();
             default -> display("invalid input ");
         }
     }
@@ -50,8 +50,8 @@ public class Nokiasample {
                 Press 2 -> mainMenu
           
                 """);
-       int value = input.nextInt();
-        if (value == 2) {
+       String value = input.nextLine();
+        if (value.equals("2")) {
             mainMenu();
         }else {
             display("invalid input");
@@ -72,88 +72,83 @@ public class Nokiasample {
                 6 -> AUTO UPDATE OF DATE AND TIME
                 """);
         System.out.println("Enter your request: ");
-        int clock = input.nextInt();
+        String clock = input.nextLine();
         switch (clock) {
-            case 1 -> {
+            case "1" -> {
                 display("""
                             ALARM CLOCK
                         2 -> mainMenu
                         3 -> clock
                         """);
-                int comeBack = input.nextInt();
+                String comeBack = input.nextLine();
                 switch (comeBack) {
-                    case 2 -> mainMenu();
-                    case 3 -> Clock();
-                    default -> {
-                        while (comeBack != 2 && comeBack != 3) {
-                            display("Invalid input");
-                            comeBack = input.nextInt();
-                        }
-                    }
+                    case "2" -> mainMenu();
+                    case "3" -> Clock();
+                    default -> display("Invalid input");
                 }
             }
-            case 2 -> {
+            case "2" -> {
                 display("""
                             CLOCK SETTING
                         Press 2 -> mainMenu
                         Press 3 -> clock
                         """);
-                int value = input.nextInt();
+                String value = input.nextLine();
                 switch (value) {
-                    case 2 -> mainMenu();
-                    case 3 -> Clock();
+                    case "2" -> mainMenu();
+                    case "3" -> Clock();
                     default -> display("Invalid input");
                 }
             }
-            case 3 -> {
+            case "3" -> {
                 display("""
                             DATE SETTING
                         Press 2 -> mainMenu
                         Press 3 -> Clock
                         """);
-                int date = input.nextInt();
+                String date = input.nextLine();
                 switch (date) {
-                    case 2 -> mainMenu();
-                    case 3 -> Clock();
+                    case "2" -> mainMenu();
+                    case "3" -> Clock();
                     default -> display("Invalid input");
                 }
             }
-            case 4 -> {
+            case "4" -> {
                 display("""
                             STOP WATCH
                         Press 2 -> mainMenu
                         Press 3 -> Clock
                         """);
-                int watch = input.nextInt();
+                String watch = input.nextLine();
                 switch (watch) {
-                    case 2 -> mainMenu();
-                    case 3 -> Clock();
+                    case "2" -> mainMenu();
+                    case "3" -> Clock();
                     default -> display("Invalid input");
-                }
+                    }
             }
-            case 5 -> {
+            case "5" -> {
                 display("""
                             COUNT DOWN TIMER
                         Press 2 -> mainMenu
                         Press 3 -> Clock
                         """);
-                int timer = input.nextInt();
+                String timer = input.nextLine();
                 switch (timer) {
-                    case 2 -> mainMenu();
-                    case 3 -> Clock();
+                    case "2" -> mainMenu();
+                    case "3" -> Clock();
                     default -> display("Invalid input");
                 }
             }
-            case 6 -> {
+            case "6" -> {
                 display("""
                             AUTO UPDATE OF DATE AND TIME
                         Press 2 -> mainMenu
                         Press 3 -> Clock
                         """);
-                int update = input.nextInt();
+                String update = input.nextLine();
                 switch (update) {
-                    case 2 -> mainMenu();
-                    case 3 -> Clock();
+                    case "2" -> mainMenu();
+                    case "3" -> Clock();
                     default -> display("Invalid input");
                 }
             }
@@ -166,8 +161,8 @@ public class Nokiasample {
                 Press 2 -> mainMenu
                 Press 3 -> Clock
                 """);
-        int response = input.nextInt();
-        if (response == 2) {
+        String response = input.nextLine();
+        if (response.equals("2")) {
             mainMenu();
         }else {
             display("Invalid input");
@@ -181,8 +176,8 @@ public class Nokiasample {
                 Press 2 -> mainMenu
                 
                 """);
-       int response = input.nextInt();
-       if (response == 2){
+       String response = input.nextLine();
+       if (response.equals("2")){
            mainMenu();
        }else {
            display("Invalid input ");
@@ -195,8 +190,8 @@ public class Nokiasample {
                         GAMES
                       Press 2 -> mainMenu
                       """);
-         int value = input.nextInt();
-        if (value == 2){
+         String value = input.nextLine();
+        if (value.equals("2")){
             mainMenu();
         }else {
             display("Invalid input");
@@ -209,9 +204,12 @@ public class Nokiasample {
                     CALL DIVERT
                 Press 2 -> mainMenu
                 """);
-      int response = input.nextInt();
-        if (response == 2){
+      String response = input.nextLine();
+        if (response.equals("2")){
             mainMenu();
+        }else{
+            display("Invalid input");
+            callDivert();
         }
     }
 
@@ -227,9 +225,9 @@ public class Nokiasample {
                 5 -> mainMenu
                 """);
         System.out.println("Enter your request:");
-        int setting = input.nextInt();
+        String setting = input.nextLine();
         switch (setting) {
-            case 1:
+            case "1":
                 display("""
                         ================
                            CALL SETTING
@@ -244,102 +242,75 @@ public class Nokiasample {
                         8 -> Go back to mainMenu
                         """);
                 System.out.println("Enter your request: ");
-                int callSetting = input.nextInt();
+                String callSetting = input.nextLine();
                 switch (callSetting) {
-                    case 1 -> {
+                    case "1" -> {
                         display("""
                                     AUTOMATIC REDIAL
                                 Press 2 -> mainMenu
                                 """);
-                        int response = input.nextInt();
-                        if (response == 2) {
+                        String response = input.nextLine();
+                        if (response.equals("2")) {
                             mainMenu();
-                        }while (response != 2){
-                            display("Invalid input");
-                            display("Enter the response");
-                            response = input.nextInt();
+                        }else {
+                            Setting();
                         }
                     }
-                    case 2 -> {
+                    case "2" -> {
                         display("""
                                     SPEED DIALLING
                                 Press 2 -> mainMenu
                                 """);
-                        int speed = input.nextInt();
-                        if (speed == 2) {
+                        String speed = input.nextLine();
+                        if (speed.equals("2")) {
                             mainMenu();
-                        }while (speed != 2){
-                            display("Invalid input");
-                            display("Enter the response");
-                            speed = input.nextInt();
-                        }
+                        }else Setting();
                     }
-                    case 3 -> {
+                    case "3" -> {
                         display("""
                                     CALL WAITING OPTIONS
                                 Press 2 -> mainMenu
                                 """);
-                        int call = input.nextInt();
-                        if (call == 2) {
+                        String call = input.nextLine();
+                        if (call.equals("2")) {
                             mainMenu();
-                        }while (call != 2){
-                            display("Invalid input");
-                            display("Enter the response");
-                            call = input.nextInt();
-                        }
+                        }else Setting();
                     }
-                    case 4 -> {
+                    case "4" -> {
                         display("""
                                     OWN NUMBER SENDING
                                 Press 2 -> mainMenu
                                 """);
-                        int number = input.nextInt();
-                        if (number == 2) {
+                        String number = input.nextLine();
+                        if (number.equals("2")) {
                             mainMenu();
-                        }while (number != 2){
-                            display("Invalid input");
-                            display("Enter the response");
-                            number = input.nextInt();
-                        }
+                        }else display("Invalid input");
                     }
-                    case 5 -> {
+                    case "5" -> {
                         display("""
                                     PHONE LINE IN USE
                                 Press 2 -> mainMenu
                                 """);
-                        int phone = input.nextInt();
-                        if (phone == 2) {
+                        String phone = input.nextLine();
+                        if (phone.equals("2")) {
                             mainMenu();
-                        }while (phone != 2){
-                            display("Invalid input");
-                            display("Enter the response");
-                            phone = input.nextInt();
-                        }
+                        }else display("Invalid input");
                     }
-                    case 6 -> {
+                    case "6" -> {
                         display("""
                                     AUTOMATIC ANSWER
                                 Press 2 -> mainMenu
                                 """);
-                        int answer = input.nextInt();
-                        if (answer == 2) {
+                        String answer = input.nextLine();
+                        if (answer.equals("2")) {
                             mainMenu();
-                        }while (answer != 2){
-                            display("Invalid input");
-                            display("Enter the response");
-                            answer = input.nextInt();
-                        }
+                        }Setting();
                     }
-                    case 7 -> Setting();
-                    case 8 -> mainMenu();
-                    default -> {
-                        while (callSetting >= 8){
-                            display("Invalid input Enter between 1 and 8");
-                            callSetting = input.nextInt();
-                        }
-                    }
+                    case "7" -> Setting();
+                    case "8" -> mainMenu();
+                    default -> display("Invalid input");
                 }
-            case 2:
+            case "2":
                 display("""
                         ==================
                            PHONE SETTING
@@ -354,108 +325,73 @@ public class Nokiasample {
                         8 -> Go Back to mainMenu
                         """);
                 System.out.println("Enter a request: ");
-                int phoneS = input.nextInt();
+                String phoneS = input.nextLine();
                 switch (phoneS) {
-                    case 1 -> {
+                    case "1" -> {
                         display("""
                                     LANGUAGE
                                 Press 2 -> mainMenu
                                 """);
-                        int language = input.nextInt();
-                        if (language == 2) {
+                        String language = input.nextLine();
+                        if (language.equals("2")) {
                             mainMenu();
-                        }
-                        while (language != 2) {
-                            display("Pick the right number");
-                            language = input.nextInt();
-                        }
+                        }else display("Invalid input");
                     }
-                    case 2 -> {
+                    case "2" -> {
                         display("""
                                   CELL INFO DISPLAY
                                 Press 2 -> mainMenu
                                 """);
-                        int info = input.nextInt();
-                        if (info == 2) {
+                        String info = input.nextLine();
+                        if (info.equals("2")) {
                             mainMenu();
-                        }
-                        while (info != 2) {
-                            display("Invalid input");
-                            display("Enter the response");
-                            info = input.nextInt();
-                        }
+                        }else display("Invalid input");
                     }
-                    case 3 -> {
+                    case "3" -> {
                         display("""
                                     WELCOME NOTICE
                                 Press 2 -> mainMenu
                                 """);
-                        int notice = input.nextInt();
-                        if (notice == 2) {
+                        String notice = input.nextLine();
+                        if (notice.equals("2")) {
                             mainMenu();
-                        }
-                        while (notice != 2) {
-                            display("Invalid input");
-                            display("Enter the response");
-                            notice = input.nextInt();
-                        }
+                        }else display("Invalid input");
                     }
-                    case 4 -> {
+                    case "4" -> {
                         display("""
                                     NETWORK SELECTION
                                 Press 2 -> mainMenu
                                 """);
-                        int network = input.nextInt();
-                        if (network == 2) {
+                        String network = input.nextLine();
+                        if (network.equals("2")) {
                             mainMenu();
-                        }
-                        while (network != 2) {
-                            display("Invalid input");
-                            display("Enter the response");
-                            network = input.nextInt();
-                        }
+                        }else display("Invalid input");
                     }
-                    case 5 -> {
+                    case "5" -> {
                         display("""
                                     LIGHT
                                 Press 2 -> mainMenu
                                 """);
-                        int light = input.nextInt();
-                        if (light == 2) {
+                        String light = input.nextLine();
+                        if (light.equals("2")) {
                             mainMenu();
-                        }
-                        while (light != 2) {
-                            display("Invalid input");
-                            display("Enter the response");
-                            light = input.nextInt();
-                        }
+                        }else display("Invalid input");
                     }
-                    case 6 -> {
+                    case "6" -> {
                         display("""
                                     CONFIRMS SIM SERVICE ACTION
                                 Press 2 -> mainMenu
                                 """);
-                        int sim = input.nextInt();
-                        if (sim == 2) {
+                        String sim = input.nextLine();
+                        if (sim.equals("2")) {
                             mainMenu();
-                        }
-                        while (sim != 2) {
-                            display("Invalid input");
-                            display("Enter the response");
-                            sim = input.nextInt();
-                        }
+                        } else display("Invalid input");
                     }
-                    case 7 -> Setting();
-                    case 8 -> mainMenu();
-                    default -> {
-                        while (phoneS > 8) {
-                            display("Invalid input");
-                            display("Enter the response");
-                            phoneS = input.nextInt();
-                        }
-                    }
+                    case "7" -> Setting();
+                    case "8" -> mainMenu();
+                    default -> display("Invalid input");
                 }
-            case 3: display("""
+            case "3": display("""
                     ====================
                      SECURITY SETTING
                     ====================
@@ -469,119 +405,82 @@ public class Nokiasample {
                     8 -> Go to mainMenu
                     """);
                 System.out.println("Enter a request: ");
-                int security = input.nextInt();
+                String security = input.nextLine();
                 switch (security) {
-                    case 1 -> {
+                    case "1" -> {
                         display("""
                                     PIN CODE REQUEST
                                 Press 2 -> mainMenu
                                 """);
-                        int code = input.nextInt();
-                        if (code == 2) {
+                        String code = input.nextLine();
+                        if (code.equals("2")) {
                             mainMenu();
-                        }
-                        while (code != 2) {
-                            display("Invalid input");
-                            display("Enter the response");
-                            code = input.nextInt();
-                        }
+                        }else display("Invalid input");
                     }
-                    case 2 -> {
+                    case "2" -> {
                         display("""
                                     CALL BARRING SERVICE
                                 Press 2 -> mainMenu
                                 """);
-                        int call = input.nextInt();
-                        if (call == 2) {
+                        String call = input.nextLine();
+                        if (call.equals("2")) {
                             mainMenu();
-                        }
-                        while (call != 2) {
-                            display("Invalid input");
-                            display("Enter the response");
-                            call = input.nextInt();
-                        }
+                        }else display("Invalid input");
                     }
-                    case 3 -> {
+                    case "3" -> {
                         display("""
                                     FIXED DIALLING
                                 Press 2 -> mainMenu
                                 """);
-                        int fixed = input.nextInt();
-                        if (fixed == 2) {
+                        String fixed = input.nextLine();
+                        if (fixed.equals("2")) {
                             mainMenu();
-                        }
-                        while (fixed != 2) {
-                            display("Invalid input");
-                            display("Enter the response");
-                            fixed = input.nextInt();
-                        }
+                        }else display("Invalid input");
                     }
-                    case 4 -> {
+                    case "4" -> {
                         display("""
                                     CLOSED USER GROUP
                                 Press 2 -> mainMenu
                                 """);
-                        int user = input.nextInt();
-                        if (user == 2) {
+                        String user = input.nextLine();
+                        if (user.equals("2")) {
                             mainMenu();
-                        }
-                        while (user != 2) {
-                            display("Invalid input");
-                            display("Enter the response");
-                            user = input.nextInt();
-                        }
+                        }else display("Invalid input");
                     }
-                    case 5 -> {
+                    case "5" -> {
                         display("""
                                     PHONE SECURITY
                                 Press 2 -> mainMenu
                                 """);
-                        int phone = input.nextInt();
-                        if (phone == 2) {
+                        String phone = input.nextLine();
+                        if (phone.equals("2")) {
                             mainMenu();
-                        }
-                        while (phone != 2) {
-                            display("Invalid input");
-                            display("Enter the response");
-                            phone = input.nextInt();
-                        }
+                        } else display("Invalid input");
                     }
-                    case 6 -> {
+                    case "6" -> {
                         display("""
                                     CHANGE ACCESS CODE
                                 Pres 2 -> mainMenu
                                 """);
-                        int change = input.nextInt();
-                        if (change == 2) {
+                        String change = input.nextLine();
+                        if (change.equals("2")) {
                             mainMenu();
-                        }
-                        while (change != 2) {
+                        }else
                             display("Invalid input");
-                            display("Enter the response");
-                            change = input.nextInt();
-                        }
                     }
                 }
-            case 4: display("""
+            case "4": display("""
                     1 -> RESTORE FACTORY SETTING
                     Press 2 -> mainMenu
                     """);
-           int factory = input.nextInt();
-                if (factory == 2){
+           String factory = input.nextLine();
+                if (factory.equals("2")){
                     mainMenu();
-                }while (factory != 2){
-                display("Invalid input");
-                display("Enter the response");
-                factory = input.nextInt();
-            }
-            break;
-            case 5: mainMenu();
+                }else display("Invalid input");
+                break;
+                case "5": mainMenu();
             default:{
-                while (setting > 5){
-                    display("Invalid input");
-                    display("Enter the response");
-                    setting = input.nextInt();
-                }
+                display("Invalid input");
             }
         }
     }
@@ -616,11 +515,7 @@ public class Nokiasample {
             case 9 -> screenSaver();
             case 10 -> mainMenu();
             default -> {
-                while (ring > 10) {
-                    display("Invalid input");
-                    display("Enter the response");
-                    ring = input.nextInt();
-                }
+                display("Invalid input");
             }
         }
     }
@@ -630,13 +525,12 @@ public class Nokiasample {
                     SCREEN SAVER
                 Press 2 -> mainMenu
                 """);
-        int saver = input.nextInt();
-        if (saver == 2){
+        String saver = input.nextLine();
+        if (saver.equals("2")){
             mainMenu();
-        }while (saver != 2){
+        }else {
             display("Invalid input");
-            display("Enter the response");
-            saver = input.nextInt();
+            screenSaver();
         }
     }
 
@@ -646,12 +540,11 @@ public class Nokiasample {
                 Press 2 -> mainMenu
                 """);
         int alert = input.nextInt();
-        if (alert == 2){
+        if (alert == 2) {
             mainMenu();
-        }while (alert != 2){
+        } else {
             display("Invalid input");
-            display("Enter the response");
-            alert = input.nextInt();
+            vibratingAlert();
         }
     }
 
@@ -663,10 +556,9 @@ public class Nokiasample {
         int game = input.nextInt();
         if (game == 2){
             mainMenu();
-        }while (game != 2){
+        }else {
             display("Invalid input");
-            display("Enter the response");
-            game = input.nextInt();
+            gameTone();
         }
     }
 
@@ -678,10 +570,9 @@ public class Nokiasample {
         int tone = input.nextInt();
         if (tone == 2){
             mainMenu();
-        }while (tone != 2){
+        }else {
             display("Invalid input");
-            display("Enter the response");
-            tone = input.nextInt();
+            keypadTone();
         }
     }
 
@@ -693,10 +584,9 @@ public class Nokiasample {
         int alert = input.nextInt();
         if (alert == 2){
             mainMenu();
-        }while (alert != 2){
+        }else {
             display("Invalid input");
-            display("Enter the response");
-            alert = input.nextInt();
+            messageAlert();
         }
     }
 
@@ -708,10 +598,8 @@ public class Nokiasample {
         int compose = input.nextInt();
         if (compose == 2){
             mainMenu();
-        }while (compose != 2){
+        }else {
             display("Invalid input");
-            display("Enter the response");
-            compose = input.nextInt();
         }
     }
 
@@ -723,10 +611,9 @@ public class Nokiasample {
         int alert = input.nextInt();
         if (alert == 2){
             mainMenu();
-        }while (alert != 2){
+        }else  {
             display("Invalid input");
-            display("Enter the response");
-            alert = input.nextInt();
+            callAlert();
         }
     }
 
@@ -753,10 +640,9 @@ public class Nokiasample {
        int tone = input.nextInt();
         if (tone == 2){
             mainMenu();
-        }while (tone != 2){
+        }else {
             display("Invalid input");
-            display("Enter the response");
-            tone = input.nextInt();
+            ringing();
         }
     }
 
@@ -776,23 +662,21 @@ public class Nokiasample {
                 9 -> mainMenu
                 """);
         System.out.println("Enter your request");
-        int call = input.nextInt();
+        String call = input.nextLine();
         switch (call) {
-            case 1:
+            case "1":
                 display("""
                          Missed calls
                         press 2 -> mainMenu
                         """);
-               int calls = input.nextInt();
-                if (calls == 2){
+               String calls = input.nextLine();
+                if (calls.equals("2")){
                     mainMenu();
-                }while (calls != 2){
+                }else {
                 display("Invalid input");
-                display("Enter the response");
-                calls = input.nextInt();
             }
                 break;
-            case 2:
+            case "2" :
                 display("""
                           RECEIVED CALLS
                         Press 2 -> mainMenu
@@ -800,41 +684,35 @@ public class Nokiasample {
                int received = input.nextInt();
                 if (received == 2){
                     mainMenu();
-                }while (received != 2){
+                }else {
                 display("Invalid input");
-                display("Enter the response");
-                received = input.nextInt();
             }
                 break;
-            case 3:
+            case "3":
                 display("""
                           DIALLED NUMBERS
                         Press 2 -> mainMenu
                         """);
-                int number = input.nextInt();
-                if (number == 2){
+                String number = input.nextLine();
+                if (number.equals("2")){
                     mainMenu();
-                }while (number != 2){
+                }else {
                 display("Invalid input");
-                display("Enter the response");
-                number = input.nextInt();
             }
                 break;
-            case 4:
+            case "4":
                 display("""
                            ERASE RECENT CALL LISTS
                         Press 2 -> mainMenu
                         """);
-                int erase = input.nextInt();
-                if (erase == 2){
+                String erase = input.nextLine();
+                if (erase.equals("2")){
                     mainMenu();
-                }while (erase != 2){
+                }else {
                 display("Invalid input");
-                display("Enter the response");
-                erase = input.nextInt();
             }
                 break;
-            case 5:
+            case "5":
                 display("""
                         =====================
                             CALL DURATION
@@ -848,85 +726,70 @@ public class Nokiasample {
                         7 -> GO BACK TO MAIN MENU
                         """);
                 System.out.println("Enter the request:");
-                int duration = input.nextInt();
+                String duration = input.nextLine();
                 switch (duration) {
-                    case 1 -> {
+                    case "1" -> {
                         display("""
                                   LAST CALL DURATION
                                 Press 2 -> mainMenu
                                 """);
-                        int last = input.nextInt();
-                        if (last == 2) {
+                        String last = input.nextLine();
+                        if (last.equals("2")) {
                             mainMenu();
-                        }
-                        while (last != 2) {
+                        }else {
                             display("Invalid input");
-                            display("Enter the response");
-                            last = input.nextInt();
                         }
                     }
-                    case 2 -> {
+                    case "2"  -> {
                         display("""
                                  All CALL DURATION
                                  Press 2 -> mainMenu
                                 """);
-                        int all = input.nextInt();
-                        if (all == 2) {
+                        String all = input.nextLine();
+                        if (all. equals("2")) {
                             mainMenu();
-                        }
-                        while (all != 2) {
+                        }else {
                             display("Invalid input");
-                            display("Enter the response");
-                            all = input.nextInt();
                         }
                     }
-                    case 3 -> {
+                    case "3" -> {
                         display("""
                                    RECEIVED CALL DURATION
                                 Press 2 -> mainMenu
                                 """);
-                        int option = input.nextInt();
-                        if (option == 2) {
+                        String option = input.nextLine();
+                        if (option.equals("2")) {
                             mainMenu();
-                        }
-                        while (option != 2) {
+                        }else {
                             display("Invalid input");
-                            display("Enter the response");
-                            option = input.nextInt();
                         }
                     }
-                    case 4 -> {
+                    case "4" -> {
                         display("""
                                     DIALLED CALL DURATION
                                 Press 2 -> mainMenu
                                 """);
-                        int dialled = input.nextInt();
-                        if (dialled == 2) {
+                        String dialled = input.nextLine();
+                        if (dialled.equals("2")) {
                             mainMenu();
-                        }
-                        while (dialled != 2) {
+                        }else {
                             display("Invalid input");
-                            display("Enter the response");
-                            dialled = input.nextInt();
                         }
                     }
-                    case 5 -> {
+                    case "5" -> {
                         display("""
                                     CLEAR TIMERS
                                 Press 2 -> mainMenu
                                 """);
-                        int timer = input.nextInt();
-                        if (timer == 2) {
+                        String timer = input.nextLine();
+                        if (timer.equals("2")) {
                             mainMenu();
-                        }
-                        while (timer != 2) {
+                        } else  {
                             display("Invalid input");
-                            display("Enter the response");
-                            timer = input.nextInt();
                         }
                     }
                 }
-            case 6:
+            case "6":
                 display("""
                         ===================
                             CALL COST
@@ -937,59 +800,49 @@ public class Nokiasample {
                         4 -> GO BACK TO CALL
                         5 -> GO BACK TO MENU
                         """);
-                int callCost = input.nextInt();
+                String callCost = input.nextLine();
                 switch (callCost) {
-                    case 1 -> {
+                    case "1" -> {
                         display("""
                                     LAST CALL COST
                                 Press 2 -> mainMenu
                                 """);
-                        int last = input.nextInt();
-                        if (last == 2) {
+                        String last = input.nextLine();
+                        if (last.equals("2")) {
                             mainMenu();
-                        }
-                        while (last != 2) {
+                        }else {
                             display("Invalid input");
-                            display("Enter the response");
-                            last = input.nextInt();
                         }
                     }
-                    case 2 -> {
+                    case "2" -> {
                         display("""
                                     ALL CALLS COST
                                 Press 2 -> mainMenu
                                 """);
-                        int all = input.nextInt();
-                        if (all == 2) {
+                        String all = input.nextLine();
+                        if (all.equals("2")) {
                             mainMenu();
-                        }
-                        while (all != 2) {
+                        }else {
                             display("Invalid input");
-                            display("Enter the response");
-                            all = input.nextInt();
                         }
                     }
-                    case 3 -> {
+                    case "3" -> {
                         display("""
                                     CLEAR COUNTER
                                 Press 2 -> mainMenu
                                 """);
-                        int clear = input.nextInt();
-                        if (clear == 2) {
+                        String clear = input.nextLine();
+                        if (clear.equals("2")) {
                             mainMenu();
                         }
                     }
-                    case 4 -> callRegister();
-                    case 5 -> mainMenu();
+                    case "4" -> callRegister();
+                    case "5" -> mainMenu();
                     default -> {
-                        while (callCost > 5) {
                             display("Invalid input");
-                            display("Enter the response");
-                            callCost = input.nextInt();
                         }
                     }
-                }
-            case 7:
+            case "7":
                 display("""
                         ======================
                             CALL COST SETTING
@@ -999,51 +852,43 @@ public class Nokiasample {
                         3 -> Go to call
                         4 -> Go to mainMenu
                         """);
-                int callSetting = input.nextInt();
+                String callSetting = input.nextLine();
                 switch (callSetting) {
-                    case 1 -> {
+                    case "1" -> {
                         display("""
                                   CALL COST LIMIT
                                 Press 2 -> mainMenu
                                 """);
-                        int cost = input.nextInt();
-                        if (cost == 2) {
+                        String cost = input.nextLine();
+                        if (cost.equals("2")) {
                             mainMenu();
-                        }
-                        while (cost != 2) {
+                        }else {
                             display("Invalid input");
-                            display("Enter the response");
-                            cost = input.nextInt();
                         }
                     }
-                    case 2 -> {
+                    case "2" -> {
                         display("""
                                     COST IN
                                 Press 2 -> mainMenu
                                 """);
-                        int costs = input.nextInt();
-                        if (costs == 2) {
+                        String costs = input.nextLine();
+                        if (costs. equals("2")) {
                             mainMenu();
-                        }
-                        while (costs != 2) {
+                        }else {
                             display("Invalid input");
-                            display("Enter the response");
-                            costs = input.nextInt();
                         }
                     }
                 }
-            case 8:
+            case "8":
                 display("""
                             PREPAID CREDIT
                         Press 2 -> mainMenu
                         """);
-                int prepaid = input.nextInt();
-                if (prepaid == 2){
+                String prepaid = input.nextLine();
+                if (prepaid.equals("2")){
                     mainMenu();
-                }while (prepaid != 2){
+                }else {
                 display("Invalid input");
-                display("Enter the response");
-                prepaid = input.nextInt();
             }
                 break;
         }
@@ -1054,13 +899,11 @@ public class Nokiasample {
                 1 -> chat
                 2 -> mainMenu
                 """);
-       int chat = input.nextInt();
-        if (chat == 2){
+       String chat = input.nextLine();
+        if (chat.equals("2")){
             mainMenu();
-        }while (chat != 2){
-            display("Invalid input");
-            display("Enter the response");
-            chat = input.nextInt();
+        }else {
+            chat();
         }
     }
 
@@ -1082,50 +925,44 @@ public class Nokiasample {
                 10 -> Voice tags
                 """);
         System.out.println("Enter the options: ");
-        int options = input.nextInt();
+        String options = input.nextLine();
         switch (options) {
-            case 1 -> {
+            case "1" -> {
                 display("""
                              Search
                         2 -> mainmenu""");
-                int main = input.nextInt();
-                if (main == 2) {
+                String main = input.nextLine();
+                if (main.equals("2")) {
                     mainMenu();
-                }while (main != 2){
+                }else {
                     display("Invalid input");
-                    display("Enter the response");
-                    main = input.nextInt();
                 }
             }
-            case 2 -> {
+            case "2" -> {
                 display("""
                            Service Nos
                         2 -> mainMenu
                         """);
-                int service = input.nextInt();
-                if (service == 2) {
+                String service = input.nextLine();
+                if (service.equals("2")) {
                     mainMenu();
-                }while (service != 2){
+                }else {
                     display("Invalid input");
-                    display("Enter the response");
-                    service = input.nextInt();
                 }
             }
-            case 3 -> {
+            case "3" -> {
                 display("""
                              Add name
                         2 -> mainMenu
                         """);
-                int add = input.nextInt();
-                if (add == 2) {
+                String add = input.nextLine();
+                if (add.equals("2")) {
                     mainMenu();
-                }while (add != 2){
+                }else {
                     display("Invalid input");
-                    display("Enter the response");
-                    add = input.nextInt();
                 }
             }
-            case 4 -> {
+            case "4" -> {
                 display("""
                              Erase
                         2-> mainMenu
@@ -1133,109 +970,95 @@ public class Nokiasample {
                 int erase = input.nextInt();
                 if (erase == 2) {
                     mainMenu();
-                }while (erase != 2){
+                } else {
                     display("Invalid input");
-                    display("Enter the response");
-                    erase = input.nextInt();
                 }
             }
-            case 5 -> {
+            case "5" -> {
                 display("""
                             Edit
                         2 -> mainMenu
                         """);
-                int edit = input.nextInt();
-                if (edit == 2) {
+                String edit = input.nextLine();
+                if (edit.equals("2")) {
                     mainMenu();
-                }while (edit != 2){
+                }else {
                     display("Invalid input");
-                    display("Enter the response");
-                    edit = input.nextInt();
                 }
             }
-            case 6 -> {
+            case "6" -> {
                 display("""
                             Assign tone
                         2 -> mainMenu
                         """);
-                int tone = input.nextInt();
-                if (tone == 2) {
+            String tone = input.nextLine();
+                if (tone.equals("2")) {
                     mainMenu();
-                }while (tone != 2){
+                }else {
                     display("Invalid input");
-                    display("Enter the response");
-                    tone = input.nextInt();
                 }
             }
-            case 7 -> {
+            case "7" -> {
                 display("""
                             Send b' cards
                         2-> mainMenu
                         """);
-                int cards = input.nextInt();
-                if (cards == 2) {
+                String cards = input.nextLine();
+                if (cards.equals("2")) {
                     mainMenu();
-                }while (cards != 2){
+                }else {
                     display("Invalid input");
-                    display("Enter the response");
-                    cards = input.nextInt();
                 }
             }
-            case 8 -> {
+            case "8" -> {
                 display("""
                         1-> Type of view
                         2 -> Memory status
                         3 -> mainMenu
                         """);
-                int value = input.nextInt();
-                if (value == 1) {
+                String  value = input.nextLine();
+                if (value.equals("1")) {
                     System.out.println("Type of view");
                     System.out.println("Press 3 to mainMenu");
                     int press = input.nextInt();
                     if (press == 3) mainMenu();
-                    while (press != 3){
-                        System.out.println("Ode pick one to mainMenu");
-                        press = input.nextInt();
+                    else {
+                        System.out.println("Invalid input");
                     }
-                } else if (value == 2) {
+                } else if (value.equals("2")) {
                     System.out.println("Memory status");
                     System.out.println("Press 3 to mainMenu");
-                    int press = input.nextInt();
-                    if (press == 3) mainMenu();
-                    while (press != 3){
-                        System.out.println("Press 3 to mainMenu");
-                        press = input.nextInt();
+                    String press = input.nextLine();
+                    if (press.equals("3")) mainMenu();
+                    else {
+                        System.out.println("Invalid input");
                     }
-                } else if (value == 3) {
+                } else if (value.equals("3")) {
                     mainMenu();
-                }while (value != 3){
+                }else {
                     display("Invalid input");
-                    display("Enter the response");
-                    value = input.nextInt();
                 }
             }
-            case 9 -> {
+            case "9" -> {
                 display("""
                             Speed dials
                         2 -> mainMenu
                         """);
-                int dials = input.nextInt();
-                if (dials == 2) mainMenu();
-                while (dials != 2){
-                    System.out.println("Press 3 to mainMenu");
-                    dials = input.nextInt();
+                String dials = input.nextLine();
+                if (dials.equals("2")) mainMenu();
+                else {
+                    System.out.println("Invalid input");
                 }
             }
-            case 10 -> {
+            case "10" -> {
                 display("""
                             Voice dials
                         2 -> mainMenu
                         """);
-                int voice = input.nextInt();
-                if (voice == 2) mainMenu();
-                while (voice != 2){
-                    System.out.println("Press 3 to mainMenu");
-                    voice = input.nextInt();
+                String voice = input.nextLine();
+                if (voice.equals("2")) mainMenu();
+                else {
+                    System.out.println("Invalid input");
                 }
             }
         }
@@ -1256,51 +1079,56 @@ public class Nokiasample {
                 11 -> Go back to menu
                 """);
         System.out.println("Enter your request:");
-        int option = input.nextInt();
+        String option = input.nextLine();
         switch (option) {
-            case 1:
+            case "1":
                 display("""
                              Write message
                         2 -> mainMenu
                         """);
-                int mess = input.nextInt();
-                if (mess == 2) mainMenu();
-                while (mess != 2){
-                    System.out.println("Press 2 to mainMenu");
-                    mess = input.nextInt();
+                String  mess = input.nextLine();
+                if (mess.equals("2")) mainMenu();
+                else {
+                    System.out.println("Invalid input");
                 }
                 break;
-            case 2:
+            case "2":
                 display("\tInbox");
                 display("2 -> mainMenu");
-                int menu = input.nextInt();
-                if (menu == 2) mainMenu();
-                while (menu != 2){
-                    System.out.println("Press 2 to mainMenu");
-                    menu = input.nextInt();
+                String menu = input.nextLine();
+                if (menu.equals("2")) mainMenu();
+                else {
+                    System.out.println("Invalid input");
                 }
                 break;
-            case 3:
+            case "3":
                 display("\tOutbox");
                 display("2 -> mainMenu");
-                int main = input.nextInt();
-                if (main == 2) mainMenu();
-                while (main != 2){
+                String main = input.nextLine();
+                if (main.equals("2")) mainMenu();
+                while (!main.equals("2")) {
                     System.out.println("Press 2 to mainMenu");
-                    main = input.nextInt();
+                    main = input.nextLine();
+                    if (main.equals("2")) {
+                        mainMenu();
+                        break;
+                    }
                 }
                 break;
-            case 4:
+            case "4":
                 display("\tPicture message");
                 display("2 -> mainMenu");
-                int picture = input.nextInt();
-                if (picture == 2) mainMenu();
-                while (picture != 2){
+                String picture = input.nextLine();
+                if (picture.equals("2")) mainMenu();
+                while (!picture.equals("2")){
                     System.out.println("Ode");
-                    picture = input.nextInt();
+                    picture = input.nextLine();
+                    if (picture.equals("2")){
+                        mainMenu();
+                    }
                 }
                 break;
-            case 5:
+            case "5":
                 display("\tTemplate");
                 display("2 -> mainMenu");
                 int temp = input.nextInt();
@@ -1310,7 +1138,7 @@ public class Nokiasample {
                     temp = input.nextInt();
                 }
                 break;
-            case 6:
+            case "6":
                 display("\tSmileys");
                 display("2 -> mainMenu");
                 int smile = input.nextInt();
@@ -1320,7 +1148,7 @@ public class Nokiasample {
                     smile = input.nextInt();
                 }
                 break;
-            case 7:
+            case "7":
                 display("""
                         =======================
                             MESSAGE SETTING
@@ -1444,7 +1272,7 @@ public class Nokiasample {
                             }
                         }
                 }
-            case 8:
+            case "8":
                 display("""
                         \tInfo service
                          2 -> mainMenu
@@ -1456,7 +1284,7 @@ public class Nokiasample {
                     info = input.nextInt();
                 }
                 break;
-            case 9:
+            case "9":
                 display("""
                         \tVoice mailbox editor
                         2 -> mainMenu
@@ -1468,7 +1296,7 @@ public class Nokiasample {
                     value = input.nextInt();
                 }
                 break;
-            case 10:
+            case "10":
                 display("""
                         \tService command editor
                         2 -> mainMenu
@@ -1480,14 +1308,10 @@ public class Nokiasample {
                     service = input.nextInt();
                 }
                 break;
-            case 11: mainMenu();
+            case "11": mainMenu();
             default: {
-                while (option > 11) {
                     display("Invalid input");
-                    display("Enter the response");
-                    option = input.nextInt();
                 }
             }
         }
     }
-}
