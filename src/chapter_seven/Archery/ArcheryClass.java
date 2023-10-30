@@ -1,4 +1,4 @@
-package chapter_seven;
+package chapter_seven.Archery;
 
 import java.security.SecureRandom;
 

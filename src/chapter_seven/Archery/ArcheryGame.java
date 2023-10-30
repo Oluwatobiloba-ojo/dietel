@@ -1,4 +1,6 @@
-package chapter_seven;
+package chapter_seven.Archery;
+
+import chapter_seven.Archery.ArcheryClass;
 
 public class ArcheryGame {
     public static void main(String[] args) {
