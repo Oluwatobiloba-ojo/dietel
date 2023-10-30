@@ -1,9 +1,10 @@
 package chapter_seven;
 
+import chapter_seven.knight_game.Knights;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class KnightsTest {
     Knights myKnights;
@@ -57,4 +58,29 @@ public class KnightsTest {
         myKnights.moveKnightsMethod(secondMove);
         assertArrayEquals(myKnights.checksPositionOfKnights(), new int[]{1, 5});
     }
+    @Test
+    public void testForMoveNumberIsBetween0And7(){
+        int moveNumber = 8;
+        Throwable exception = assertThrows(IllegalArgumentException.class, () ->{
+            myKnights.moveKnightsMethod(moveNumber);
+    });
+        assertEquals("Invalid input", exception.getMessage());
+        assertArrayEquals(new int[]{3, 4},myKnights.checksPositionOfKnights());
+    }
+
+       @Test
+    public void testForIndexOutOfBoundFreeInAMove(){
+        int moveNumber = 0;
+        myKnights.moveKnightsMethod(moveNumber);
+        int[] position = myKnights.checksPositionOfKnights();
+        int[] result = {2, 6};
+        assertArrayEquals(result, position);
+
+        int move = 0;
+        Throwable throwable = assertThrows(ArrayIndexOutOfBoundsException.class, ()-> {
+            myKnights.moveKnightsMethod(move);
+                });
+        assertEquals("Square Position not Found in board", throwable.getMessage());
+       }
+
 }
