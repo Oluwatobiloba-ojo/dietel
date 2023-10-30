@@ -1,10 +1,12 @@
 package chapter_seven;
 
+import chapter_seven.turtle_graphics.Turtle;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertArrayEquals;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import java.util.Arrays;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 public class TurtleGraphicsTest {
     Turtle myTurtle;
@@ -53,7 +55,10 @@ public class TurtleGraphicsTest {
 
     @Test
     public void testForWhenItHasNotMoveRightItCantMoveLeft(){
-        myTurtle.moveLeft();
+        Throwable throwable = assertThrows(IllegalArgumentException.class, ()->{
+            myTurtle.moveLeft();
+        });
+        assertEquals("No movement at all", throwable.getMessage());
         myTurtle.penUp();
         myTurtle.moveRight();
         assertArrayEquals(new int[]{0, 1}, myTurtle.checkPosition());
@@ -62,8 +67,8 @@ public class TurtleGraphicsTest {
     @Test
     public void testForMovementOf10SpacesWithinTheSquare(){
         myTurtle.penDown();
-        myTurtle.moveSpaces(); // row = 0, column = 10
-        myTurtle.moveSpaces(); // row = 1, column = 10
+        myTurtle.moveSpaces();
+        myTurtle.moveSpaces();
         myTurtle.penDown();
         assertArrayEquals(new int[]{1, 10}, myTurtle.checkPosition());
         assertEquals(2, myTurtle.checkForShapes());
