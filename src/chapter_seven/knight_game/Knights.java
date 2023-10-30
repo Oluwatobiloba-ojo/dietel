@@ -10,29 +10,35 @@ public class Knights {
 
     public void moveKnightsMethod(int moveNumber) {
         setHorizontalAndVertical();
-        setCurrentPositionOnChessBoard();
-        for (int count = 0; count < knightsChess.length; count++) {
-            int replicate = currentRow;
-            for (int counter = 0; counter < knightsChess[count].length; counter++) {
-                if (count == currentRow && counter == currentColumn && knightsChess[currentRow + vertical[moveNumber]]
-                        [currentColumn + horizontal[moveNumber]] == 0) {
-                    currentRow += vertical[moveNumber];
-                    currentColumn += horizontal[moveNumber];
-                    insertAdditionalRowAndColumn(currentColumn, currentRow);
-                    counter = knightsChess[count].length;
-                }
-            }
-            if (count == replicate) count = knightsChess.length;
+        setCurrentPositionOnChessBoard(3, 4);
+        if (moveNumber >= 0 && moveNumber < vertical.length) {
+            currentRow += vertical[moveNumber];
+            currentColumn += horizontal[moveNumber];
+            insertValueOf(currentColumn, currentRow, moveNumber);
+        }else throw new IllegalArgumentException("Invalid input");
+    }
+    public void setBackKnightMove(int movement){
+        currentRow -= vertical[movement];
+        currentColumn -= horizontal[movement];
+    }
+
+    private void insertValueOf(int currentColumn, int currentRow, int movement) {
+        if (currentColumn >= 0 && currentColumn < knightsChess.length && currentRow >= 0 && currentRow < knightsChess.length) {
+            insertValue(currentColumn, currentRow, movement);
+        } else {
+            setBackKnightMove(movement);
+            throw new ArrayIndexOutOfBoundsException("Square Position not Found in board");
         }
     }
-
-    private void insertAdditionalRowAndColumn(int currentColumn, int currentRow) {
-        knightsChess[currentRow][currentColumn] = numberOfCount;
-        numberOfCount++;
+    private void insertValue(int currentColumn, int currentRow, int movement){
+        if (knightsChess[currentRow][currentColumn] == 0) {
+            knightsChess[currentRow][currentColumn] = numberOfCount;
+            numberOfCount++;
+        }else setBackKnightMove(movement);
     }
 
-    public void setCurrentPositionOnChessBoard() {
-        knightsChess[3][4] = 10;
+    public void setCurrentPositionOnChessBoard(int row, int column) {
+        knightsChess[row][column] = 10;
     }
 
     private static void setHorizontalAndVertical() {
