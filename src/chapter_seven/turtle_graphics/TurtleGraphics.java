@@ -7,10 +7,18 @@ public class TurtleGraphics {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         displayInfo();
-        String value = input.nextLine();
+        String value = "0";
+        boolean condition = true;
         while (!value.equals("9")){
-            turtleGame(value);
-            value = input.nextLine();
+            do {
+                try {
+                    value = input.nextLine();
+                    turtleGame(value);
+                    condition = false;
+                }catch (IllegalArgumentException exception){
+                    System.out.println(exception.getMessage());
+                }
+            }while (condition);
         }
     }
 

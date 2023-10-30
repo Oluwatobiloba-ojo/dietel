@@ -20,7 +20,7 @@ public class Turtle {
     }
 
     public void moveRight() {
-        if (column >= turtleMove[0].length){
+        if (column == turtleMove[0].length - 1){
             moveRow();
             column = 0;
         }else column += moveRightAndLeft;
@@ -45,7 +45,7 @@ public class Turtle {
     public void moveLeft() {
         if (column > 0){
             column -= moveRightAndLeft;
-        }
+        }else throw new IllegalArgumentException("No movement at all");
     }
 
     public void moveSpaces() {
