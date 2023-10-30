@@ -1,5 +1,6 @@
 package chapter_seven;
 
+import chapter_seven.Archery.ArcheryClass;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -13,14 +14,14 @@ public class ArcheryGameTest {
     }
 
     @Test
-    public void testForThePlayersForTheGameIsFour(){
+    public void testForNumbersPlayersInTheGameIsFour(){
        int players = myArchery.getNumberOfPlayers();
        int numberOfPlayer = 4;
        assertEquals(players, numberOfPlayer);
     }
 
     @Test
-    public void testForTheSelectionOfPlayers(){
+    public void testForTheSelectionOfDifferentPlayers(){
         myArchery.setPlayers(1);
         assertEquals(1, myArchery.getPlayerSet());
         myArchery.setPlayers(2);

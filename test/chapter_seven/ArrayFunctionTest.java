@@ -6,39 +6,39 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class ArrayFunctionTest {
     @Test
-    public void testThatLargestElementInAnArrayCanBePointOut(){
+    public void testThatLargestElementInAnArrayCanBePointOutWhenNumbersAre9(){
         int [] integers = {1, 3, 5, 6, 7, 8, 9, 10};
         int largest =  ArrayFunction.largestElement(integers);
         assertEquals(10, largest);
     }
     @Test
-    public void testThatLargestElementInAnArrayCanBePointOuts(){
+    public void testThatLargestElementInArrayWhenThereIsDuplicateAndHas8Number(){
         int [] integers = {1,4,6,8,9,9,910, 1000};
         int largest = ArrayFunction.largestElement(integers);
         assertEquals(1000, largest);
     }
     @Test
-    public void testLargest2(){
+    public void testForTheLargestNumberWhenStartingFirst(){
         int [] integers = {1000, 5, 8, 9, 20, 50, 56, 67, 78, 200};
         int largest = ArrayFunction.largestElement(integers);
         assertEquals(1000, largest);
     }
     @Test
-    public void testReverse1(){
+    public void testForReverseOfAList(){
         int [] integers = {1, 3, 5, 6, 7, 8, 9, 10};
         int[] reverse =  ArrayFunction.reverseList(integers);
         int[] result = {10, 9, 8, 7, 6, 5, 3, 1};
        assertArrayEquals(result, reverse);
     }
     @Test
-    public void testReverse2(){
+    public void testReverseForAListWhenNumbersAreNegative(){
         int [] integers = {1000, 2000, 4000, -200, -500};
         int [] reverse = {-500, -200, 4000, 2000, 1000};
         int [] result = ArrayFunction.reverseList(integers);
         assertArrayEquals(result, reverse);
     }
     @Test
-    public void testWhetherAnyElementOccurInAList(){
+    public void testWhetherAnyElementOccurInAWithinAList(){
         int [] integers = {10, 20, 40, 60, 70, 50};
         boolean result =  ArrayFunction.checkListElement(integers, 50);
         assertTrue(result);
@@ -57,7 +57,7 @@ class ArrayFunctionTest {
         assertArrayEquals(result, answer);
     }
     @Test
-    public void testOddPosition2(){
+    public void testOddPositionBetweenLengthBeenEven(){
         int [] integers = {19, 2, 5, 4, 7, 8, 9, 10};
         int [] result = ArrayFunction.oddPosition(integers);
         int [] answer = {2, 4, 8, 10};
@@ -71,7 +71,7 @@ class ArrayFunctionTest {
         assertArrayEquals(evenResult, answer);
     }
     @Test
-    public void testForEvenPositionInAnArray(){
+    public void testForEvenPositionInAnArrayWhenTheLengthIsOdd(){
         int [] integers = {0, 11, 21, 33, 44, 55, 67, 78, 80};
         int [] evenResult = ArrayFunction.evenPosition(integers);
         int [] answer = {0, 21, 44, 67, 80};
@@ -85,20 +85,20 @@ class ArrayFunctionTest {
         assertEquals(result, answer);
     }
     @Test
-    public void testForTotal(){
+    public void testForTotalOfFourNumbers(){
         int[] array = {1,3,150,350};
         int result = ArrayFunction.totalArray(array);
         int answer = 1 + 3 + 150 + 350;
         assertEquals(result,answer);
     }
     @Test
-    public void testThatAStringIsAPalindrome(){
+    public void testThatAThreeLengthStringIsAPalindrome(){
         String name = "dad";
         boolean result = ArrayFunction.isPalindrome(name);
         assertTrue(result);
     }
     @Test
-    public void testThatItIsAPalindrome(){
+    public void testThatFiveLengthStringIsPalindrome(){
         String name = "Moses";
         boolean result = ArrayFunction.isPalindrome(name);
         assertFalse(result);
@@ -179,7 +179,7 @@ class ArrayFunctionTest {
         assertArrayEquals(result, convert);
     }
     @Test
-    public void testSomething(){
+    public void testForFunctionThatTakesANumberAndConvertEachOfNumberToList(){
         int number = 1245678000;
         int [] result = ArrayFunction.convertIntegerToList(number);
         int [] convert = {1, 2, 4, 5, 6, 7, 8, 0, 0, 0};

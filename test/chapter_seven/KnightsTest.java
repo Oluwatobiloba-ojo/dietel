@@ -14,7 +14,7 @@ public class KnightsTest {
     }
 
     @Test
-    public void testForCurrentMovement(){
+    public void testForCurrentPosition(){
         int[] currentPosition = myKnights.checksPositionOfKnights();
         int[] current = {3, 4};
         assertArrayEquals(current, currentPosition);
@@ -44,7 +44,7 @@ public class KnightsTest {
         assertArrayEquals(finalPosition, finalAnswer);
     }
     @Test
-    public void testThatAPotentialMoveToEnsureTheSquareIsNotFilled(){
+    public void testThatAPotentialMoveToEnsureTheSquareItMovedIsNotFilled(){
         int[] currentPosition = myKnights.checksPositionOfKnights();
         assertArrayEquals(currentPosition, new int[]{3, 4});
 
@@ -59,7 +59,7 @@ public class KnightsTest {
         assertArrayEquals(myKnights.checksPositionOfKnights(), new int[]{1, 5});
     }
     @Test
-    public void testForMoveNumberIsBetween0And7(){
+    public void testForMoveNumberThatMoveNumberIsBetweenZeroAndSeven(){
         int moveNumber = 8;
         Throwable exception = assertThrows(IllegalArgumentException.class, () ->{
             myKnights.moveKnightsMethod(moveNumber);

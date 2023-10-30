@@ -7,29 +7,29 @@ import static org.junit.jupiter.api.Assertions.*;
 class FibonacciTest {
 
     @Test
-    public void testForFibonacciFunction(){
+    public void testForFibonacciFunctionWhenInput30Gives21(){
         assertEquals( 21.0,Fibonacci.fibonnaci(30));
     }
 
     @Test
-    public void testForFibonacciFunction2(){
+    public void testForFibonacciFunctionOfForty(){
         assertEquals(34.0, Fibonacci.fibonnaci(40));
     }
     @Test
-    public void testForFibonacciFunction3(){
+    public void testForFibonacciFunctionOfFiftyToGives34(){
         assertEquals(34.0, Fibonacci.fibonnaci(50));
     }
     @Test
-    public void testForFibonacciFunction4(){
+    public void testForFibonacciFunctionForNumberGreaterThan50(){
         assertEquals(55.0, Fibonacci.fibonnaci(60));
     }
 
     @Test
-    public void testForFibonacciFunction5(){
+    public void testForThatFibonacciFunctionDoesNotGiveValueForNegativeInput(){
         assertEquals(0.0, Fibonacci.fibonnaci(-10));
     }
     @Test
-    public void testForFibonacciFunction6(){
+    public void testForFibonacciFunctionOfTen(){
         assertEquals(8.0, Fibonacci.fibonnaci(10));
     }
 

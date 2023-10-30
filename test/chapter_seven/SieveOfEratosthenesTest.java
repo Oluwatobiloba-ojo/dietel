@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class SieveOfEratosthenesTest {
 
     @Test
-    void testForAPrimeNumberInAnArrayOfIndex(){
+    void testForAPrimeNumberInAnArrayOfIndexLengthOf100(){
         boolean [] prime = new boolean[100];
         for (int i = 2; i < prime.length ; i++) {
             prime[i] = true;
@@ -18,7 +18,7 @@ class SieveOfEratosthenesTest {
     }
 
     @Test
-    void testForAPrimeNUmberInAnArrayOfIndices2(){
+    void testForAPrimeNUmberInAnArrayOfLength10(){
         boolean [] index = {false, false, true, true, true, true, true, true, true, true};
         int answer = 4;
         int primeNumber = SieveOfEratosthenes.checkPrimeIndices(index);
@@ -26,11 +26,10 @@ class SieveOfEratosthenesTest {
     }
 
     @Test
-    void testForThePrimeNumberUsingSieveOfEratosthenes(){
-        boolean [] index = {false, false, true, true, true, true,true,true,true};
+    void testForThePrimeNumberWithinZeroToNine() {
+        boolean[] index = {false, false, true, true, true, true, true, true, true};
         int answer = 4;
         int primeNumber = SieveOfEratosthenes.checkPrimeIndices(index);
         assertEquals(answer, primeNumber);
     }
-
 }

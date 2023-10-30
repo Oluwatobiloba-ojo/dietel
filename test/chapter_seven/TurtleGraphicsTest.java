@@ -15,9 +15,8 @@ public class TurtleGraphicsTest {
         myTurtle = new Turtle();
     }
 
-
     @Test
-    public void testForThatWhenAPenIsUpTheTurtleDoesNotWriteAnyShapeMoving(){
+    public void testForThatWhenAPenIsUpTheTurtleDoesNotWriteAnyShapeInBoard(){
         myTurtle.penUp();
         assertArrayEquals(new int[]{0, 0}, myTurtle.checkPosition());
     }
@@ -45,7 +44,7 @@ public class TurtleGraphicsTest {
     }
 
     @Test
-    public void testForWhenPenIsUpAndItsMoveRightForTwentyTimesItMovesToTheNextRow(){
+    public void testForWhenPenIsDownAndItsMoveRightForTwentyTimesItMovesToTheNextRow(){
         for (int count = 0; count < 20; count++){
             myTurtle.moveRight();
             myTurtle.penDown();
@@ -73,6 +72,4 @@ public class TurtleGraphicsTest {
         assertArrayEquals(new int[]{1, 10}, myTurtle.checkPosition());
         assertEquals(2, myTurtle.checkForShapes());
     }
-
-
 }
