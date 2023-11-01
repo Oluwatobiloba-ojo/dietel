@@ -1,4 +1,4 @@
-package chapter_six.makingDiff;
+package chapter_six.makingDiff.fatigue_excercise;
 
 import java.security.SecureRandom;
 import java.util.Scanner;
@@ -6,29 +6,6 @@ import java.util.Scanner;
 public class StudentFatigue {
    static Scanner input = new Scanner(System.in);
    static SecureRandom myRandom = new SecureRandom();
-    public static void main(String[] args){
-            String stopper = "CONTINUE";
-            while (stopper.equals("CONTINUE")){
-                computer();
-                System.out.println("Enter stop to end the program and enter continue to move on ");
-                stopper = input.next();
-            }
-        }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         private static void displayGood(int guess) {
             switch (guess){
                 case 1 -> System.out.println("Very Good ");

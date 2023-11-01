@@ -1,19 +1,10 @@
-package chapter_six.makingDiff;
+package chapter_six.makingDiff.computer_assisted;
 
 import java.security.SecureRandom;
 import java.util.Scanner;
 public class ComputerAssistedInstruction {
     static SecureRandom myRandom = new SecureRandom();
    static Scanner input = new Scanner(System.in);
-    public static void main(String[] args) {
-        String stopper = "CONTINUE";
-        while (stopper.equals("CONTINUE")){
-            computer();
-            System.out.println("Very Good");
-            System.out.println("Enter stop to end the program and enter continue to move on ");
-            stopper = input.next().toUpperCase();
-        }
-    }
 
 
 

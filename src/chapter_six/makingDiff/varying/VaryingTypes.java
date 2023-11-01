@@ -1,10 +1,10 @@
-package chapter_six.makingDiff;
+package chapter_six.makingDiff.varying;
 
 import java.security.SecureRandom;
 import java.util.Scanner;
 
-import static chapter_six.makingDiff.DifficultyLevel.difficulty1;
-import static chapter_six.makingDiff.DifficultyLevel.difficulty2;
+import static chapter_six.makingDiff.difficult.DifficultyLevel.difficulty1;
+import static chapter_six.makingDiff.difficult.DifficultyLevel.difficulty2;
 
 public class VaryingTypes {
     static SecureRandom myRandom = new SecureRandom();

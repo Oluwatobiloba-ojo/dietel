@@ -1,11 +1,6 @@
 package chapter_six;
 
 public class TablesOfNumbers {
-    public static void main(String[] args) {
-        for (int number = 1; number <= 25 ; number++) {
-            System.out.println(number + "\t\t\t" + calculateBinary(number) + "\t\t\t"+ calculateOctal(number));
-        }
-    }
     public static String calculateBinary(int number){
         String nums = "";
         while (number != 0){

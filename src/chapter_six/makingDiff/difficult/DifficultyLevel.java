@@ -1,4 +1,4 @@
-package chapter_six.makingDiff;
+package chapter_six.makingDiff.difficult;
 
 import java.security.SecureRandom;
 import java.util.Scanner;
@@ -6,35 +6,6 @@ import java.util.Scanner;
 public class DifficultyLevel {
     static SecureRandom myRandom = new SecureRandom();
     static Scanner input = new Scanner(System.in);
-    public static void main(String[] args) {
-        int result = 0;
-        System.out.println("Enter 1 -> Difficulty Level 1\n" +
-                          "Enter 2 -> Difficult level 2");
-        int level = input.nextInt();
-       result =  result(level, result);
-      double percentage = calculatePercentage(result);
-      response(percentage);
-    }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     public static void response(double percentage){
         if (percentage < 75){
@@ -43,16 +14,11 @@ public class DifficultyLevel {
             System.out.println("You can give the next level a chance! ");
         }
     }
+
     public static double calculatePercentage(int result){
         double rate = (double) (result * 10) / 100;
         return rate * 100;
     }
-
-
-
-
-
-
 
 
     public static int result(int level, int result){
@@ -71,6 +37,7 @@ public class DifficultyLevel {
         }
         return result;
     }
+
     public static int difficulty1(){
         int random = 1 + myRandom.nextInt(9);
         int secondRandom = 1 + myRandom.nextInt(9);
@@ -83,6 +50,7 @@ public class DifficultyLevel {
         }
         return countOfCorrect;
     }
+
     public static int difficulty2(){
         int random = 10 + myRandom.nextInt(9);
         int secondRandom = 10 + myRandom.nextInt(9);
