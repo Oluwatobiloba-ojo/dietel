@@ -3,13 +3,13 @@ package pizzaFolder;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class PizzaMainTest {
-    pizza_main my_pizza;
+    PizzaMain my_pizza;
     @BeforeEach
     public void setMy_pizza(){
-        my_pizza = new pizza_main();
+        my_pizza = new PizzaMain();
     }
 
     @Test
@@ -44,7 +44,7 @@ class PizzaMainTest {
 
     @Test
     public void testForTheCalculationOfNumberOfSlicesWhenTheyInputNegativeValue(){
-        assertEquals(0, my_pizza.calculateNumberOfSlices(-10, -10, -10));
+        assertEquals(-1, my_pizza.calculateNumberOfSlices(-10, -10, -10));
     }
 
     @Test
@@ -61,4 +61,29 @@ class PizzaMainTest {
     public void testForTheCalculationForGettingTheNumberOfBoxesNeededIfSizeIsSmall(){
         assertEquals(17, my_pizza.calculateNumberOfBoxes(10, 10, 5, "small"));
     }
+
+    @Test
+    public void testForTheCalculationOfTheSlicesWhichWillRemain(){
+        assertEquals(5, my_pizza.calculateRemains(10, 10, 5, "Big"));
+    }
+
+    @Test
+    public void testForTheCalculationOfSlicesWhichIsAnExcessOfABoxSizeWhichIsMedium(){
+        assertEquals(1, my_pizza.calculateRemains(10, 10, 5, "medium"));
+    }
+
+    @Test
+    public void testForTheTotalPrizeOfTheBoxBought(){
+        assertEquals(35000, my_pizza.calculateTotalPrize(10, 10, 5, "Big"));
+    }
+
+    @Test
+    public void testForTheTotalPriceOfTheBoxWhichIsMediumBought(){
+        assertEquals(33000, my_pizza.calculateTotalPrize(10, 10, 5, "medium"));
+    }
+    @Test
+    public void testForTheTotalPriceOfTheBoxWhichIsMediumBoughtAndAllStomachIsNotPresent(){
+        assertEquals(21000, my_pizza.calculateTotalPrize(10, 0, 1, "medium"));
+    }
+
 }
