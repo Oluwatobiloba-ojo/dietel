@@ -171,9 +171,9 @@ public class DeckOfCardTest {
         Card[] card = new Card[5];
         card[0] = new Card("Ace", "spade");
         card[1] = new Card("Jack", "spade");
-        card[2] = new Card("Ace", "Clubs");
+        card[2] = new Card("Ten", "Clubs");
         card[3] = new Card("Jack","spade");
         card[4] = new Card("Jack", "spade");
-        assertTrue(deck.isFullHouse(card));
+        assertFalse(deck.isFullHouse(card));
     }
 }
