@@ -15,7 +15,9 @@ public class KnightExceptionalHandling {
             try {
                 System.out.println("Enter the position between (1 to 8)");
                 int moveNumber = input.nextInt();
-                myKnights.moveKnightsMethod(moveNumber - 1);
+//                myKnights.moveKnightsMethod(moveNumber - 1);
+                myKnights.setPosition(moveNumber);
+                myKnights.insert();
                 myKnights.displayTheKnightChess();
                 condition = false;
             }catch (IllegalArgumentException argumentException){
