@@ -1,2 +1,6 @@
-package classwork;public class Type {
+package classwork;
+
+public enum Type {
+    SPIRITUAL, FINANCIAL, EDUCATION, BUSINESS, TECHNICAL
+
 }
