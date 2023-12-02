@@ -1,2 +1,7 @@
-package chapter_seven.turtle_graphics;public enum Pen {
+package chapter_seven.turtle_graphics;
+
+public enum Pen {
+    UP,
+    DOWN
+
 }

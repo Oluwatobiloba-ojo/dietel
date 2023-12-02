@@ -1,45 +1,38 @@
 package chapter_seven.turtle_graphics;
 
+import java.util.Objects;
 import java.util.Scanner;
 
 public class TurtleGraphics {
   static Turtle myTurtle = new Turtle();
+  static Scanner scanner = new Scanner(System.in);
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
-        displayInfo();
-        String value = "0";
-        boolean condition = true;
-        while (!value.equals("9")){
-            do {
-                try {
-                    value = input.nextLine();
-                    turtleGame(value);
-                    condition = false;
-                }catch (IllegalArgumentException exception){
-                    System.out.println(exception.getMessage());
-                }
-            }while (condition);
-        }
+      displayInfo();
+      String input = scanner.nextLine();
+      while (!input.equals("9")){
+        operationCode(input);
+        System.out.println("Enter a number");
+        input = scanner.nextLine();
+      }
     }
 
 
 
 
+  private static void operationCode(String input) {
+      switch (input){
+        case "1", "3", "2", "4" -> myTurtle.move(Integer.parseInt(input));
+        case "5" -> {
+          String moveNumber = scanner.nextLine();
+          myTurtle.moveBy(Integer.parseInt(moveNumber));
+        }
+        case "6" -> myTurtle.getBoard();
+      }
+  }
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-    public static void displayInfo(){
+  public static void displayInfo(){
         System.out.println("""
                 ======================================
                     WELCOME TO TURTLE GRAPHICS
@@ -52,15 +45,5 @@ public class TurtleGraphics {
                 6. PRESS NINE TO END
                 ======================================
                 """);
-    }
-    public static void turtleGame(String value){
-        switch (value){
-            case "1" -> myTurtle.penUp();
-            case "2" -> myTurtle.penDown();
-            case "3" -> myTurtle.moveRight();
-            case "4" -> myTurtle.moveLeft();
-            case "5" -> myTurtle.moveSpaces();
-            case "6" -> myTurtle.displayShapesMoveWhenPenIsDown();
-        }
     }
 }

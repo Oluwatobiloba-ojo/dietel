@@ -1,67 +1,121 @@
 package chapter_seven.turtle_graphics;
 
 public class Turtle {
+    private Direction direction = Direction.EAST;
+    private final Position position = new Position(0, 0);
+    private final String[][] board = new String[20][20];
+    private Pen pen = Pen.UP;
 
-    private final int[][] turtleMove = new int[20][20];
-    int row = 0;
-    final static int shapesMove = 10;
-    final static int moveRightAndLeft = 1;
-    int column = 0;
-    public void penUp() {
-    turtleMove[row][column] = 0;
+    public Pen pen() {
+        return pen;
+    }
+    public void move(int movement) {
+        if (movement == 1) pen = Pen.UP;
+        else if (movement == 2) pen = Pen.DOWN;
+        else if (movement == 3) turnRightMovement();
+        else if (movement == 4) turnLeftMovement();
     }
 
-    public int[] checkPosition() {
-        return new int[]{row, column};
+    private void turnLeftMovement() {
+        if (direction == Direction.EAST) direction = Direction.NORTH;
+        else if (direction == Direction.NORTH) direction = Direction.WEST;
+        else if (direction == Direction.WEST) direction = Direction.SOUTH;
+        else if (direction == Direction.SOUTH) direction = Direction.EAST;
     }
 
-    public void penDown() {
-        turtleMove[row][column] = 1;
+    private void turnRightMovement() {
+        if (direction == Direction.EAST) direction = Direction.SOUTH;
+        else if (direction == Direction.SOUTH) direction = Direction.WEST;
+        else if (direction == Direction.WEST) direction = Direction.NORTH;
+        else if (direction == Direction.NORTH) direction = Direction.EAST;
     }
 
-    public void moveRight() {
-        if (column == turtleMove[0].length - 1){
-            moveRow();
-            column = 0;
-        }else column += moveRightAndLeft;
+    public Direction direction() {
+        return direction;
     }
 
-    private void moveRow() {
-        row += moveRightAndLeft;
+
+    public void moveBy(int space) {
+        if (direction == Direction.EAST) movementByEast(space);
+        else if (direction == Direction.SOUTH) movementBySouth(space);
+        else if (direction == Direction.NORTH) movementByNorth(space);
+        else if (direction == Direction.WEST) movementByWest(space);
     }
 
-    public int checkForShapes() {
-        int shapes = 0;
-        for (int shape = 0; shape < turtleMove.length; shape++){
-            for (int innerSquare = 0; innerSquare < turtleMove[shape].length; innerSquare++){
-                if (turtleMove[shape][innerSquare] != 0){
-                    shapes += 1;
-                }
+    private void movementByWest(int space) {
+        int column = position.getColumn() - space;
+        if (column >= 0) {
+            if (pen == Pen.DOWN) {
+                inputCharactersIntoBoard(column);
             }
+            position.setColumn(column);
         }
-        return shapes;
+        else throw new NoRoadException("Road blocked");
     }
 
-    public void moveLeft() {
-        if (column > 0){
-            column -= moveRightAndLeft;
-        }else throw new IllegalArgumentException("No movement at all");
+    private void inputCharactersIntoBoard(int column) {
+        for (int count = position.getColumn(); count >= column; count--){
+            this.board[position.getRow()][count] = "*";
+        }
     }
 
-    public void moveSpaces() {
-        if (column >= shapesMove){
-            moveRow();
-            column = shapesMove;
-        }else column += shapesMove;
+    private void movementByNorth(int space) {
+       int row =  position.getRow() - space;
+      if (row >= 0){
+          if (pen == Pen.DOWN) {
+              inputBoardByNorth(row);
+          }
+          position.setRow(row);
+      }
+      else throw new NoRoadException("Road blocked");
     }
 
-    public void displayShapesMoveWhenPenIsDown(){
-        for (int i = 0; i < turtleMove.length; i++) {
-            for (int j = 0; j < turtleMove[i].length; j++) {
-                if (turtleMove[i][j] == 1) {
-                    System.out.print("*" + "\t");
-                } else
-                    System.out.print("\t");
+    private void inputBoardByNorth(int row) {
+        for (int count = position.getRow(); count >= row; count--){
+            this.board[count][position.getColumn()] = "*";
+        }
+    }
+
+    private void movementBySouth(int space) {
+        int row = position.getRow() + space;
+        if (row < this.board.length){
+            if (pen == Pen.DOWN) {
+                inputBoardBySouth(row);
+            }
+            position.setRow(row);
+        }
+    }
+
+    private void inputBoardBySouth(int row) {
+        for (int count = position.getRow(); count < row; count++){
+            this.board[count][position.getColumn()] = "*";
+        }
+    }
+
+    private void movementByEast(int space) {
+        int column = position.getColumn() + space;
+        if (column <= this.board.length) {
+            inputBoardEast(column);
+            position.setColumn(column);
+        }
+    }
+
+    private void inputBoardEast(int column) {
+        for (int count = position.getColumn(); count <= column; count++){
+            this.board[position.getRow()][count] = "*";
+        }
+    }
+
+    public int[] getPosition() {
+        return position.getPosition();
+    }
+
+    public void getBoard(){
+        for (String[] strings : this.board) {
+            for (String string : strings) {
+                if ("*".equals(string)) {
+                    System.out.print(string + "\t");
+                } else System.out.print("\t");
             }
             System.out.println();
         }
