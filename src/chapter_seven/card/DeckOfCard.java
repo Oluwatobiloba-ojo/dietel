@@ -19,7 +19,7 @@ public class DeckOfCard {
     private int currentCard = 0;
     private boolean isEmpty;
 
-    private final HashMap<String, Integer> value_of_face = new HashMap<>();
+    private final HashMap<CardFaces, Integer> value_of_face = new HashMap<>();
 
     public boolean isNotEmpty() {
         if (deck[deck.length - 1] != null) {
@@ -29,9 +29,10 @@ public class DeckOfCard {
     }
 
     public DeckOfCard() {
-        String[] faces = {"Ace", "Deuce", "Three", "Four", "Five", "Six",
-                "Seven", "Eight", "Nine", "Ten", "Jack", "Queen", "King"};
-        String[] suits = {"Hearts", "Diamonds", "Clubs", "Spades"};
+        CardFaces[] faces = {CardFaces.ACE, CardFaces.DEUCE, CardFaces.THREE, CardFaces.FOUR, CardFaces.FIVE,
+                            CardFaces.SIX, CardFaces.SEVEN, CardFaces.EIGHT,  CardFaces.NINE, CardFaces.TEN,
+                            CardFaces.JACK, CardFaces.QUEEN, CardFaces.KING};
+        CardSuites[] suits = {CardSuites.HEART, CardSuites.DIAMOND, CardSuites.CLUBS, CardSuites.SPADES};
 
         for (int count = 0; count < NUMBER_OF_CARD; count++) {
             deck[count] = new Card(faces[count % 13], suits[count / 13]);
@@ -39,12 +40,12 @@ public class DeckOfCard {
         valueOfFace(faces);
     }
 
-    private void valueOfFace(String[] faces) {
+    private void valueOfFace(CardFaces[] faces) {
         for (int count = 0; count < faces.length; count++){
             if (count <= 9){
-                value_of_face.put(faces[count].toUpperCase(), count + 1);
+                value_of_face.put(faces[count], count + 1);
             }else {
-                value_of_face.put(faces[count].toUpperCase(), 10);
+                value_of_face.put(faces[count], 10);
             }
         }
     }
@@ -71,7 +72,7 @@ public class DeckOfCard {
 
     public boolean isPair(Card[] cards) {
         for (int i = 0; i < cards.length; i++) {
-            String face = cards[i].getFace();
+            CardFaces face = cards[i].getFace();
             for (int j = i + 1; j < cards.length; j++) {
                 if (face.equals(cards[j].getFace())) {
                     return true;
@@ -84,7 +85,7 @@ public class DeckOfCard {
     public boolean isTwoPair(Card[] cards) {
         int twoPair = 0;
         for (int i = 0; i < cards.length; i++) {
-            String face = cards[i].getFace();
+            CardFaces face = cards[i].getFace();
             for (int j = i + 1; j < cards.length; j++) {
                 if (face.equals(cards[j].getFace())) {
                     twoPair++;
@@ -101,7 +102,7 @@ public class DeckOfCard {
         for (int i = 0; i < card.length; i++) {
             int count = 0;
             ArrayList<Integer> nums = new ArrayList<>();
-            String kindOfCard = card[i].getFace();
+            CardFaces kindOfCard = card[i].getFace();
             for (int j = 0; j < card.length; j++) {
                 if (kindOfCard.equals(card[j].getFace())) {
                     count++;
@@ -117,7 +118,7 @@ public class DeckOfCard {
     public boolean hasFourOfAKind(Card[] card) {
         for (int i = 0; i < card.length ; i++) {
             int count = 1;
-            String face = card[i].getFace();
+            CardFaces face = card[i].getFace();
             for (int j = i+1; j < card.length ; j++) {
                 if (face.equals(card[j].getFace())) count++;
             }
@@ -127,7 +128,7 @@ public class DeckOfCard {
     }
 
     public boolean isAFlushCard(Card[] card) {
-        String suit = card[0].getSuit();
+        CardSuites suit = card[0].getSuit();
         for (int i = 1; i < card.length; i++) {
             if (!suit.equals(card[i].getSuit()))return false;
             if (i == card.length - 1)return true;
@@ -137,7 +138,7 @@ public class DeckOfCard {
 
     public boolean isStraightCard(Card[] card) {
         int[] numbers = new int[5];
-        for (int i = 0; i < card.length; i++) {numbers[i] = value_of_face.get(card[i].getFace().toUpperCase());}
+        for (int i = 0; i < card.length; i++) {numbers[i] = value_of_face.get(card[i].getFace());}
          int number = getLargest(numbers);
         if (checkOutRangeBetweenFaces(numbers)) {
             return number == numbers[0] || number == numbers[numbers.length - 1];
@@ -162,7 +163,7 @@ public class DeckOfCard {
     }
 
     public boolean isFullHouse(Card[] card){
-        HashSet<String> result = new HashSet<>();
+        HashSet<CardFaces> result = new HashSet<>();
         for (Card value : card) {
             result.add(value.getFace());
         }
@@ -197,9 +198,6 @@ public class DeckOfCard {
                 Number of full house card is: %s
                 """, pair_of_card, two_pair_of_card, three_kind_of_card, four_kind_of_card, flush_of_card
                 ,straight_of_card, full_house);
-    }
-    public HashMap<String, Integer> getValue_of_face() {
-        return value_of_face;
     }
 
     public void fiveCardPoker(Card[] card){
