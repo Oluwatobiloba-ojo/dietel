@@ -10,9 +10,9 @@ public class DeckOfCardTest {
 
     @Test
     public void testThatACardHasAFaceAndASuitInIt(){
-        Card card = new Card("Six", "Spades");
-        assertEquals(card.getFace(), "Six");
-        assertEquals(card.getSuit(), "Spades");
+        Card card = new Card(CardFaces.SIX, CardSuites.SPADES);
+        assertSame(card.getFace(), CardFaces.SIX);
+        assertSame(card.getSuit(), CardSuites.SPADES);
     }
 
     @Test
@@ -25,11 +25,11 @@ public class DeckOfCardTest {
     public void testThatWeWillFindOutAPairWithinAFivePokerHandCard(){
         DeckOfCard deck = new DeckOfCard();
         Card[] card = new Card[5];
-        card[0] = new Card("Jack", "spade");
-        card[1] = new Card("Ace", "Heart");
-        card[2] = new Card("Jack", "Club");
-        card[3] = new Card("Eight","spade");
-        card[4] = new Card("King", "spade");
+        card[0] = new Card(CardFaces.JACK, CardSuites.SPADES);
+        card[1] = new Card(CardFaces.ACE, CardSuites.HEART);
+        card[2] = new Card(CardFaces.JACK, CardSuites.CLUBS);
+        card[3] = new Card(CardFaces.EIGHT,CardSuites.SPADES);
+        card[4] = new Card(CardFaces.KING, CardSuites.SPADES);
         assertTrue(deck.isPair(card));
     }
 
@@ -37,11 +37,11 @@ public class DeckOfCardTest {
     public void testForWhenAFivePokerCardIsCheckedThereIsNoPair(){
         DeckOfCard deck = new DeckOfCard();
         Card[] card = new Card[5];
-        card[0] = new Card("Jack", "spade");
-        card[1] = new Card("Ace", "Heart");
-        card[2] = new Card("Nine", "Club");
-        card[3] = new Card("Eight","spade");
-        card[4] = new Card("King", "spade");
+        card[0] = new Card(CardFaces.JACK, CardSuites.SPADES);
+        card[1] = new Card(CardFaces.ACE, CardSuites.HEART);
+        card[2] = new Card(CardFaces.NINE, CardSuites.CLUBS);
+        card[3] = new Card(CardFaces.EIGHT,CardSuites.SPADES);
+        card[4] = new Card(CardFaces.KING, CardSuites.SPADES);
         assertFalse(deck.isPair(card));
     }
 
@@ -49,11 +49,11 @@ public class DeckOfCardTest {
     public void testForThatInAFiveCardThereIsTwoPairs(){
         DeckOfCard deck = new DeckOfCard();
         Card[] card = new Card[5];
-        card[0] = new Card("Jack", "spade");
-        card[1] = new Card("King", "Heart");
-        card[2] = new Card("Jack", "Club");
-        card[3] = new Card("Eight","spade");
-        card[4] = new Card("King", "spade");
+        card[0] = new Card(CardFaces.JACK, CardSuites.SPADES);
+        card[1] = new Card(CardFaces.KING, CardSuites.HEART);
+        card[2] = new Card(CardFaces.JACK, CardSuites.CLUBS);
+        card[3] = new Card(CardFaces.EIGHT,CardSuites.SPADES);
+        card[4] = new Card(CardFaces.KING, CardSuites.SPADES);
         assertTrue(deck.isTwoPair(card));
     }
 
@@ -61,11 +61,11 @@ public class DeckOfCardTest {
     public void testForThatInAFiveCardThereIsNoTwoPair(){
         DeckOfCard deck = new DeckOfCard();
         Card[] card = new Card[5];
-        card[0] = new Card("Jack", "spade");
-        card[1] = new Card("King", "Heart");
-        card[2] = new Card("Nine", "Club");
-        card[3] = new Card("Eight","spade");
-        card[4] = new Card("King", "spade");
+        card[0] = new Card(CardFaces.JACK, CardSuites.SPADES);
+        card[1] = new Card(CardFaces.KING, CardSuites.HEART);
+        card[2] = new Card(CardFaces.NINE, CardSuites.CLUBS);
+        card[3] = new Card(CardFaces.EIGHT,CardSuites.SPADES);
+        card[4] = new Card(CardFaces.KING, CardSuites.SPADES);
         assertFalse(deck.isTwoPair(card));
     }
 
@@ -73,11 +73,11 @@ public class DeckOfCardTest {
     public void testForThatInAFiveCardThatThereIsAThreeOfKindInIt(){
         DeckOfCard deck = new DeckOfCard();
         Card[] card = new Card[5];
-        card[0] = new Card("Jack", "spade");
-        card[1] = new Card("King", "Heart");
-        card[2] = new Card("Nine", "Club");
-        card[3] = new Card("King","spade");
-        card[4] = new Card("King", "spade");
+        card[0] = new Card(CardFaces.JACK, CardSuites.SPADES);
+        card[1] = new Card(CardFaces.KING, CardSuites.HEART);
+        card[2] = new Card(CardFaces.NINE, CardSuites.CLUBS);
+        card[3] = new Card(CardFaces.KING,CardSuites.SPADES);
+        card[4] = new Card(CardFaces.KING, CardSuites.SPADES);
         assertTrue(deck.hasThreeOfAKind(card));
     }
 
@@ -85,11 +85,11 @@ public class DeckOfCardTest {
     public void testForThatACardIfItIsFourKindOf(){
         DeckOfCard deck = new DeckOfCard();
         Card[] card = new Card[5];
-        card[0] = new Card("King", "spade");
-        card[1] = new Card("King", "Heart");
-        card[2] = new Card("Jack", "Club");
-        card[3] = new Card("King","spade");
-        card[4] = new Card("King", "spade");
+        card[0] = new Card(CardFaces.KING, CardSuites.SPADES);
+        card[1] = new Card(CardFaces.KING, CardSuites.SPADES);
+        card[2] = new Card(CardFaces.JACK, CardSuites.CLUBS);
+        card[3] = new Card(CardFaces.KING,CardSuites.SPADES);
+        card[4] = new Card(CardFaces.KING, CardSuites.SPADES);
         assertTrue(deck.hasFourOfAKind(card));
     }
 
@@ -97,11 +97,11 @@ public class DeckOfCardTest {
     public void testForThatACardIfIsNotFourKindOf(){
         DeckOfCard deck = new DeckOfCard();
         Card[] card = new Card[5];
-        card[0] = new Card("King", "spade");
-        card[1] = new Card("Heart", "Heart");
-        card[2] = new Card("Jack", "Club");
-        card[3] = new Card("King","spade");
-        card[4] = new Card("King", "spade");
+        card[0] = new Card(CardFaces.KING, CardSuites.SPADES);
+        card[1] = new Card(CardFaces.JACK, CardSuites.HEART);
+        card[2] = new Card(CardFaces.EIGHT, CardSuites.CLUBS);
+        card[3] = new Card(CardFaces.KING,CardSuites.SPADES);
+        card[4] = new Card(CardFaces.KING, CardSuites.SPADES);
         assertFalse(deck.hasFourOfAKind(card));
     }
 
@@ -109,11 +109,11 @@ public class DeckOfCardTest {
     public void testThatAFiveCardPokerHaveFiveSameSuits(){
         DeckOfCard deck = new DeckOfCard();
         Card[] card = new Card[5];
-        card[0] = new Card("King", "spade");
-        card[1] = new Card("Heart", "spade");
-        card[2] = new Card("Jack", "spade");
-        card[3] = new Card("King","spade");
-        card[4] = new Card("King", "spade");
+        card[0] = new Card(CardFaces.KING, CardSuites.SPADES);
+        card[1] = new Card(CardFaces.ACE, CardSuites.SPADES);
+        card[2] = new Card(CardFaces.JACK, CardSuites.SPADES);
+        card[3] = new Card(CardFaces.KING,CardSuites.SPADES);
+        card[4] = new Card(CardFaces.KING, CardSuites.SPADES);
         assertTrue(deck.isAFlushCard(card));
     }
 
@@ -121,11 +121,11 @@ public class DeckOfCardTest {
     public void testThatAFiveCardPokerNotHaveFiveSameSuits(){
         DeckOfCard deck = new DeckOfCard();
         Card[] card = new Card[5];
-        card[0] = new Card("King", "spade");
-        card[1] = new Card("Heart", "spade");
-        card[2] = new Card("Jack", "Clubs");
-        card[3] = new Card("King","spade");
-        card[4] = new Card("King", "spade");
+        card[0] = new Card(CardFaces.KING, CardSuites.SPADES);
+        card[1] = new Card(CardFaces.ACE, CardSuites.SPADES);
+        card[2] = new Card(CardFaces.JACK, CardSuites.CLUBS);
+        card[3] = new Card(CardFaces.KING,CardSuites.SPADES);
+        card[4] = new Card(CardFaces.KING, CardSuites.SPADES);
         assertFalse(deck.isAFlushCard(card));
     }
 
@@ -133,11 +133,11 @@ public class DeckOfCardTest {
     public void testThatAFiveCardPokerIsArrangeInAFaceValueConsecutively(){
         DeckOfCard deck = new DeckOfCard();
         Card[] card = new Card[5];
-        card[0] = new Card("Ten", "spade");
-        card[1] = new Card("Nine", "spade");
-        card[2] = new Card("Eight", "Clubs");
-        card[3] = new Card("Seven","spade");
-        card[4] = new Card("Six", "spade");
+        card[0] = new Card(CardFaces.TEN, CardSuites.SPADES);
+        card[1] = new Card(CardFaces.NINE, CardSuites.SPADES);
+        card[2] = new Card(CardFaces.EIGHT, CardSuites.CLUBS);
+        card[3] = new Card(CardFaces.SEVEN,CardSuites.SPADES);
+        card[4] = new Card(CardFaces.SIX, CardSuites.SPADES);
         assertTrue(deck.isStraightCard(card));
     }
 
@@ -145,11 +145,11 @@ public class DeckOfCardTest {
     public void testForThatACardIsStraightWhenFaceValueIsConsecutively(){
         DeckOfCard deck = new DeckOfCard();
         Card[] card = new Card[5];
-        card[0] = new Card("Ace", "spade");
-        card[1] = new Card("Deuce", "spade");
-        card[2] = new Card("Three", "Clubs");
-        card[3] = new Card("Four","spade");
-        card[4] = new Card("Five", "spade");
+        card[0] = new Card(CardFaces.ACE, CardSuites.SPADES);
+        card[1] = new Card(CardFaces.DEUCE, CardSuites.SPADES);
+        card[2] = new Card(CardFaces.THREE, CardSuites.CLUBS);
+        card[3] = new Card(CardFaces.FOUR,CardSuites.SPADES);
+        card[4] = new Card(CardFaces.FIVE, CardSuites.SPADES);
         assertTrue(deck.isStraightCard(card));
     }
 
@@ -157,11 +157,11 @@ public class DeckOfCardTest {
     public void testForThatACardIsNotStraightCauseFaceValueIsNotConsecutively(){
         DeckOfCard deck = new DeckOfCard();
         Card[] card = new Card[5];
-        card[0] = new Card("Ace", "spade");
-        card[1] = new Card("Deuce", "spade");
-        card[2] = new Card("Three", "Clubs");
-        card[3] = new Card("Jack","spade");
-        card[4] = new Card("Four", "spade");
+        card[0] = new Card(CardFaces.ACE, CardSuites.SPADES);
+        card[1] = new Card(CardFaces.DEUCE, CardSuites.SPADES);
+        card[2] = new Card(CardFaces.THREE, CardSuites.CLUBS);
+        card[3] = new Card(CardFaces.JACK,CardSuites.SPADES);
+        card[4] = new Card(CardFaces.FOUR, CardSuites.SPADES);
         assertFalse(deck.isStraightCard(card));
     }
 
@@ -169,11 +169,11 @@ public class DeckOfCardTest {
     public void testThatACardIsAFullHouseCard(){
         DeckOfCard deck = new DeckOfCard();
         Card[] card = new Card[5];
-        card[0] = new Card("Ace", "spade");
-        card[1] = new Card("Jack", "spade");
-        card[2] = new Card("Ten", "Clubs");
-        card[3] = new Card("Jack","spade");
-        card[4] = new Card("Jack", "spade");
+        card[0] = new Card(CardFaces.ACE, CardSuites.SPADES);
+        card[1] = new Card(CardFaces.JACK, CardSuites.SPADES);
+        card[2] = new Card(CardFaces.TEN, CardSuites.CLUBS);
+        card[3] = new Card(CardFaces.JACK,CardSuites.SPADES);
+        card[4] = new Card(CardFaces.JACK, CardSuites.SPADES);
         assertFalse(deck.isFullHouse(card));
     }
 }
