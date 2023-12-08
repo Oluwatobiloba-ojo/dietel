@@ -10,16 +10,20 @@ public class MergeSort {
         }
         return sort(nums1);
     }
-    public static int[] sort(int[] arrays){
+    private static int[] sort(int[] arrays){
         for(int count = 0; count < arrays.length; count++){
-            for(int counter = count + 1; counter < arrays.length; counter++){
-                if(arrays[counter] < arrays[count]){
-                    int temp = arrays[counter];
-                    arrays[counter] = arrays[count];
-                    arrays[count] = temp;
-                }
-            }
+            sortOfArray(arrays, count);
         }
         return arrays;
+    }
+
+    private static void sortOfArray(int[] arrays, int count) {
+        for(int counter = count + 1; counter < arrays.length; counter++){
+            if(arrays[counter] < arrays[count]){
+                int temp = arrays[counter];
+                arrays[counter] = arrays[count];
+                arrays[count] = temp;
+            }
+        }
     }
 }
