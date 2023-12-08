@@ -1,2 +1,25 @@
-package leet_code;public class MergeSort {
+package leet_code;
+
+public class MergeSort {
+
+    public static int[] merge(int[] nums1,int m, int[] nums2, int n){
+        int count = m;
+        for (int secondIndex = 0; secondIndex < n; secondIndex++){
+            nums1[count] = nums2[secondIndex];
+            count++;
+        }
+        return sort(nums1);
+    }
+    public static int[] sort(int[] arrays){
+        for(int count = 0; count < arrays.length; count++){
+            for(int counter = count + 1; counter < arrays.length; counter++){
+                if(arrays[counter] < arrays[count]){
+                    int temp = arrays[counter];
+                    arrays[counter] = arrays[count];
+                    arrays[count] = temp;
+                }
+            }
+        }
+        return arrays;
+    }
 }
