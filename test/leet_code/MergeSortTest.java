@@ -2,9 +2,7 @@ package leet_code;
 
 import org.junit.jupiter.api.Test;
 
-import java.util.Arrays;
-
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
 class MergeSortTest {
 
@@ -15,9 +13,7 @@ class MergeSortTest {
         int[] nums2 = {2, 5, 6};
         int nums2Element = 3;
         assertArrayEquals(new int[]{1, 2, 2, 3, 5, 6}, MergeSort.merge(nums1, nums1Element, nums2, nums2Element));
-    }
-
-    @Test
+    }@Test
     public void testThatWhenWeCanMergeAnArrayWithOneOfTheArrayElementZero(){
         int[] nums = {0};
         int nums1Element = 0;
