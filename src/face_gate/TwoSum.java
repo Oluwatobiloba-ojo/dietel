@@ -8,8 +8,9 @@ public class TwoSum {
         int result = 0;
         String results = "";
         for (int count = 0; count < numbers.length; count++){
-            result += checkForTwoOf(numbers, lower, upper, results);
-            results += result;
+            int number = checkForTwoOf(numbers, lower, upper, results);
+            results += number;
+            result += number;
         }
         return result;
     }
@@ -23,7 +24,7 @@ public class TwoSum {
     private static Integer sumUp(int count, int[] numbers, int lower, int upper, String digit) {
         for (int counter = count +1; counter < numbers.length; counter++) {
             int result = numbers[count] + numbers[counter];
-            if (result >= lower && result <= upper && contain(String.valueOf(result), digit)) return result;
+            if (result >= lower && result <= upper && !contain(String.valueOf(result), digit)) return result;
         }
         return null;
     }
