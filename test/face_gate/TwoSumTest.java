@@ -16,5 +16,7 @@ class TwoSumTest {
         int[] numbers = {1, 1, 2, 2, 4, 5};
         assertEquals(5, TwoSum.sumTwoPossibleRangeOfNumber(numbers, 1, 3));
     }
+    @Test
+
 
 }
