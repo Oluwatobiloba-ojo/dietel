@@ -10,7 +10,7 @@ public class PrintingDateInFormatMain {
         try {
             System.out.println(formatDate(date));
         }catch (InvalidDateFormatException exception){
-            exception.printStackTrace();
+            System.err.println(exception.getMessage());
         }
     }
 }
